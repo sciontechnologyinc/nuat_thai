@@ -1574,3 +1574,45 @@ button:active {
     padding-bottom: 20px;
     color: #1d2940;
 }
+
+header.aboutheader {
+    padding-top: 110px;
+}
+
+h3.aboutus1 {
+    margin: auto;
+    /* text-decoration: underline; */
+    width: 160px;
+    text-align: center;
+    border-bottom: 1.5px solid;
+    color: #f1e8e8;
+}
+
+p.aboutus2 {
+    margin: auto;
+    padding: 0px 100px;
+    margin-top: 45px;
+    width: 100%;
+    text-align: center;
+    color: #f1e8e8;
+    font-family: unset;
+    font-size: 16px;
+}
+
+img.aboutimg {
+    opacity: 0.4;
+    object-fit: cover;
+    display: flex;
+}
+
+.card.about {
+    background-image: url(/images/aboutus-cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.aboutmain {
+    margin-top: 12px;
+    /* background-color: rgba(255,255,255,0.1); */
+}
