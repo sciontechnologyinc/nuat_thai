@@ -17435,7 +17435,7 @@ input:focus {
     padding: 16px 35px;
     white-space: nowrap;
     height: 52px;
-    color: #4a4a4a;
+    color: #866000;
 }
 
 .sidebar .nav .nav-item .nav-link i.menu-arrow {
@@ -21267,4 +21267,29 @@ ul li {
 
 .navbar.default-layout .navbar-brand-wrapper .navbar-brand img {
     height: 40px !important;
+}
+
+.navbar.default-layout .navbar-brand-wrapper {
+    background: #191200 !important;
+}
+
+.navbar.default-layout {
+    background: linear-gradient(120deg, #000000, #866000) !important;
+}
+
+.sidebar {
+    background: #000000 !important;
+}
+
+.sidebar .nav:not(.sub-menu)>.nav-item:hover:not(.nav-profile)>.nav-link {
+    background: white !important;
+    color: #000000 !important;
+}
+
+.sidebar .nav .nav-item .nav-link .menu-icon {
+    color: #866000 !important;
+}
+
+.status-indicator.online {
+    border-color: #866000 !important;
 }
