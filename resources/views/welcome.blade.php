@@ -50,7 +50,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #ececec;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -74,6 +74,16 @@
             .welcome-cover {
                 background-color: rgba(255,255,255,0.5);
             }
+
+            .sub-title {
+                font-size: 24px;
+                color: #dedede;
+            }
+
+            .title.m-b-md {
+                font-weight: bold;
+                color: white;
+            }
         </style>
     </head>
     <body>
@@ -91,7 +101,11 @@
                 @endif
                 <div class="content">
                     <div class="title m-b-md">
-                        Nuat Thai
+                       NUAT THAI
+                       </div>
+                       <div class="sub-title">
+                       <hr>
+                       FOOT AND BODY MASSAGE
                     </div>
                 </div>
             </div>

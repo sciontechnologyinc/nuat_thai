@@ -21269,6 +21269,7 @@ ul li {
     height: 40px !important;
 }
 
+<<<<<<< HEAD
 .navbar.default-layout .navbar-brand-wrapper {
     background: #191200 !important;
 }
@@ -21292,4 +21293,8 @@ ul li {
 
 .status-indicator.online {
     border-color: #866000 !important;
+=======
+a.navbar-brand {
+    display: none !important;
+>>>>>>> 46a7835f922ee167545ef303949fd0ff72d87bb5
 }
