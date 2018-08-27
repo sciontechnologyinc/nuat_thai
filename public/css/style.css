@@ -21268,3 +21268,7 @@ ul li {
 .navbar.default-layout .navbar-brand-wrapper .navbar-brand img {
     height: 40px !important;
 }
+
+a.navbar-brand {
+    display: none !important;
+}
