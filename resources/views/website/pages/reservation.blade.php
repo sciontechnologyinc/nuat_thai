@@ -8,29 +8,18 @@
     <table class="table table-sm table-dark">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Time</th>
+      <th scope="col">Date</th>
     </tr>
   </thead>
   <tbody>
     <tr class="bg-success">
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">05:00 AM</th>
+      <td>08-28-2018</td>
     </tr>
     <tr class="bg-danger">
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">10:00 AM</th>
+      <td>08-28-2018</td>
     </tr>
   </tbody>
 </table>

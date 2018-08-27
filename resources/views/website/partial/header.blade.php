@@ -34,10 +34,10 @@
             <div class="background_image" style="background-image:url(images/menu.jpg)"></div>
             <div class="menu_content d-flex flex-column align-items-center justify-content-center">
                 <ul class="menu_nav_list text-center">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About us</a></li>
+                    <li><a href="nuatthaihome">Home</a></li>
+                    <li><a href="nuatthaiaboutus">About us</a></li>
                     <li><a href="rooms.html">Virtual Tour</a></li>
-                    <li><a href="news.html">Reservation</a></li>
+                    <li><a href="nuatthaireservation">Reservation</a></li>
                 </ul>
             </div>
         </div>

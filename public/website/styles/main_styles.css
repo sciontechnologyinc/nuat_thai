@@ -1574,3 +1574,15 @@ button:active {
     padding-bottom: 20px;
     color: #1d2940;
 }
+
+.footer_menu ul li a:hover {
+    color: #241364 !important;
+}
+
+.hamburger i:hover {
+    color: #fff600 !important;
+}
+
+.menu_nav_list li a:hover {
+    color: #fff600 !important;
+}
