@@ -1558,3 +1558,19 @@ button:active {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.container.reservation-page {
+    padding-top: 123px;
+}
+
+.reservation-title {
+    font-size: 40px;
+    color: #081123;
+    padding: 20px;
+}
+
+.reservation-desc {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #1d2940;
+}
