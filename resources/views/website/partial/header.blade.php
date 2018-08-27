@@ -23,7 +23,6 @@
 							</nav>
 							<a href="#" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Your Stay</span></div></a>
 							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-							<div class="header_review"><a href="#">Add your review</a></div>
 						</div>
 					</div>
 				</div>
