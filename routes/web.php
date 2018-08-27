@@ -23,6 +23,10 @@ Route::get('nuatthaihome', function () {
     return view('website.pages.home');
 });
 
+Route::get('nuatthaiaboutus', function () {
+    return view('website.pages.aboutus');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
