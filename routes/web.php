@@ -19,6 +19,10 @@ Route::get('homepage', function () {
     return view('admin.pages.home');
 });
 
+Route::get('nuatthaihome', function () {
+    return view('website.pages.home');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
