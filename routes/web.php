@@ -27,6 +27,10 @@ Route::get('nuatthaiaboutus', function () {
     return view('website.pages.aboutus');
 });
 
+Route::get('nuatthaireservation', function () {
+    return view('website.pages.reservation');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
