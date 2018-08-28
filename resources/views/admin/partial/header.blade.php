@@ -8,6 +8,7 @@
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
+      @yield('headerButton')
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">

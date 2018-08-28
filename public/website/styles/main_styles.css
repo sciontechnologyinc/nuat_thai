@@ -1625,3 +1625,26 @@ img.aboutimg {
 .menu_nav_list li a:hover {
     color: #fff600 !important;
 }
+
+.bookmassage-title {
+    font-size: 40px;
+    padding: 123px 0px 40px;
+    width: 270px;
+    text-align: center;
+    margin: auto;
+}
+
+button.btn.btn-success.mr-2.bookmassage {
+    background: #241364 !important;
+    border-color: #241364 !important;
+}
+
+button.btn.btn-success.mr-2.bookmassage:hover {
+    background: #081123 !important;
+    border-color: #241364 !important;
+    color: white;
+}
+
+.padding {
+    padding: 20px;
+}
