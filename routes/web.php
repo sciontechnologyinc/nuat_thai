@@ -60,6 +60,14 @@ Route::get('addmassagetype', function () {
     return view('admin.pages.massagetype.addmassagetype');
 });
 
+Route::get('packages', function () {
+    return view('admin.pages.packages.packages');
+});
+
+Route::get('addpackage', function () {
+    return view('admin.pages.packages.addpackage');
+});
+
 Route::get('nuatthaiaboutus', function () {
     return view('website.pages.aboutus');
 });

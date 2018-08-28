@@ -48,6 +48,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="massagetype">Massage Types</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="packages">Packages</a>
+                </li>
               </ul>
             </div>
           </li>
