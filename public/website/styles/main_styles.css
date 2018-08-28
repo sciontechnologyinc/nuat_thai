@@ -1633,3 +1633,18 @@ img.aboutimg {
     text-align: center;
     margin: auto;
 }
+
+button.btn.btn-success.mr-2.bookmassage {
+    background: #241364 !important;
+    border-color: #241364 !important;
+}
+
+button.btn.btn-success.mr-2.bookmassage:hover {
+    background: #081123 !important;
+    border-color: #241364 !important;
+    color: white;
+}
+
+.padding {
+    padding: 20px;
+}
