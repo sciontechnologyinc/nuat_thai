@@ -1397,6 +1397,7 @@
     /*********************************
 12. Footer
 *********************************/
+<<<<<<< HEAD
     
     .footer {
         width: 100%;
@@ -1663,3 +1664,230 @@
         margin: auto;
         text-align: center;
     }
+=======
+
+.footer {
+    width: 100%;
+    background: #FFFFFF;
+    padding-top: 91px;
+    padding-bottom: 56px;
+    border-top: 1px solid #e4e4e4;
+}
+
+.footer_logo_container {}
+
+.footer_logo {}
+
+.footer_logo a {
+    display: inline-block;
+}
+
+.footer_logo_subtitle {
+    font-size: 11px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 0.75;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.footer_logo_title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333333;
+    line-height: 0.75;
+    margin-top: 8px;
+}
+
+.footer_logo_stars {
+    display: inline-block;
+    margin-top: 11px;
+}
+
+.footer_logo_stars ul li {
+    line-height: 0.75;
+}
+
+.footer_logo_stars ul li:not(:last-child) {
+    margin-right: 4px;
+}
+
+.footer_logo_stars ul li i {
+    font-size: 9px;
+    color: #333333;
+}
+
+.copyright {
+    font-size: 11px;
+    font-weight: 500;
+    color: #8d8d8d;
+    margin-top: 11px;
+}
+
+.footer_menu ul li {
+    line-height: 0.75;
+}
+
+.footer_menu ul li:not(:last-child) {
+    margin-right: 45px;
+}
+
+.footer_menu ul li a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    white-space: nowrap;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+.footer_menu ul li a:hover {
+    color: #d6baa0;
+}
+
+.footer_menu_text {
+    margin-top: 21px;
+}
+
+.footer_contact {
+    margin-top: -5px;
+}
+
+.footer_contact_content ul li {
+    font-size: 14px;
+    font-weight: 500;
+    color: #8d8d8d;
+}
+
+.footer_contact_content ul li span {
+    color: #333333;
+    margin-left: 2px;
+}
+
+.footer_contact_content ul li:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+.whatsnew {
+    font-size: 40px;
+    padding: 20px;
+    color: #3f3f3f;
+}
+
+.whatsnew-desc {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #081123;
+}
+
+.btn:focus,
+.btn:active,
+button:focus,
+button:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#image-gallery .modal-footer {
+    display: block;
+}
+
+.thumb {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.container.reservation-page {
+    padding-top: 123px;
+}
+
+.reservation-title {
+    font-size: 40px;
+    color: #081123;
+    padding: 20px;
+}
+
+.reservation-desc {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #1d2940;
+}
+
+header.aboutheader {
+    padding-top: 110px;
+}
+
+h3.aboutus1 {
+    margin: auto;
+    /* text-decoration: underline; */
+    width: 160px;
+    text-align: center;
+    border-bottom: 1.5px solid;
+    color: #f1e8e8;
+}
+
+p.aboutus2 {
+    margin: auto;
+    padding: 0px 100px;
+    margin-top: 45px;
+    width: 100%;
+    text-align: center;
+    color: #f1e8e8;
+    font-family: unset;
+    font-size: 16px;
+}
+
+img.aboutimg {
+    opacity: 0.4;
+    object-fit: cover;
+    display: flex;
+}
+
+.card.about {
+    background-image: url(/images/aboutus-cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.aboutmain {
+    margin-top: 12px;
+    /* background-color: rgba(255,255,255,0.1); */
+    color: #241364 !important;
+}
+
+.hamburger i:hover {
+    color: #fff600 !important;
+}
+
+.menu_nav_list li a:hover {
+    color: #fff600 !important;
+}
+
+.bookmassage-title {
+    font-size: 40px;
+    padding: 123px 0px 40px;
+    width: 270px;
+    text-align: center;
+    margin: auto;
+}
+
+button.btn.btn-success.mr-2.bookmassage {
+    background: #241364 !important;
+    border-color: #241364 !important;
+}
+
+button.btn.btn-success.mr-2.bookmassage:hover {
+    background: #081123 !important;
+    border-color: #241364 !important;
+    color: white;
+}
+
+.padding {
+    padding: 20px;
+}
+>>>>>>> 0ccda1606fc89d5bad9b372ffa70fd64f537cb8e

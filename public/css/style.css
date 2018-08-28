@@ -21187,3 +21187,24 @@
     .status-indicator.online {
         border-color: #866000 !important;
     }
+    
+    .btn-success {
+        color: #fff;
+        background-color: #de9f00;
+        border-color: #de9f00;
+    }
+    
+    .sidebar .nav .nav-item.active>.nav-link {
+        color: #fafbfc !important;
+    }
+    
+    .sidebar .nav.sub-menu .nav-item .nav-link.active {
+        color: #de9f00;
+        background: transparent;
+    }
+    
+    .btn-success:hover {
+        color: #de9f00 !important;
+        background-color: white;
+        border-color: white;
+    }

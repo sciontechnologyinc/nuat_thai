@@ -1,13 +1,14 @@
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html">
+        <a class="navbar-brand brand-logo" href="dashboard">
           <img src="images/admin-logo.png" alt="logo" />
         </a>
-        <a class="navbar-brand brand-logo-mini" href="index.html">
-          <img src="images/admin-logo.png" alt="logo" />
+        <a class="navbar-brand brand-logo-mini" href="dashboard">
+          <img src="images/logo-mini.svg" alt="logo" />
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
+      @yield('headerButton')
         <ul class="navbar-nav navbar-nav-right">
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
