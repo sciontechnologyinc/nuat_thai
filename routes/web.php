@@ -15,6 +15,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('dashboard', function () {
+    return view('admin.pages.home');
+});
+
+Route::get('nuatthaihome', function () {
+    return view('website.pages.home');
+});
+
+Route::get('nuatthaiaboutus', function () {
+    return view('website.pages.aboutus');
+});
+
+Route::get('nuatthaireservation', function () {
+    return view('website.pages.reservation');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
