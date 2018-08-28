@@ -1625,3 +1625,11 @@ img.aboutimg {
 .menu_nav_list li a:hover {
     color: #fff600 !important;
 }
+
+.bookmassage-title {
+    font-size: 40px;
+    padding: 123px 0px 40px;
+    width: 270px;
+    text-align: center;
+    margin: auto;
+}

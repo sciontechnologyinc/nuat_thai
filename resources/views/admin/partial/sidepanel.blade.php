@@ -34,10 +34,19 @@
             <div class="collapse" id="reservation">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                  <a class="nav-link" href="accounts">Accounts</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                  <a class="nav-link" href="massagereservations">Massage Reservation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cabins">Cabins</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="therapists">Therapists</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="massagetype">Massage Types</a>
                 </li>
               </ul>
             </div>
