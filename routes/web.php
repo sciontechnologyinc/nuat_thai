@@ -27,6 +27,8 @@ Route::get('bookmassage', function () {
     return view('website.pages.bookmassage');
 });
 
+Route::resource('pages','BookmassageController');
+
 
 Route::get('accounts', function () {
     return view('admin.pages.accounts.account');
