@@ -1,8 +1,9 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Bookmassage;
 use Carbon\Carbon;
-use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use function Psy\debug;
@@ -16,7 +17,9 @@ class BookmassageController extends Controller
      */
     public function index()
     {
-       
+        $bookmassages = Bookmassage::orderBy('id')->get();
+        return view('bookmassages.index', ['bookmassages' => $bookmassages]);
+
     }
 
     /**
@@ -26,7 +29,7 @@ class BookmassageController extends Controller
      */
     public function create()
     {
-        return view('website.pages.bookmassage');
+        return view('bookmassages.create');
     }
 
     /**
@@ -47,7 +50,6 @@ class BookmassageController extends Controller
             
         ]);
         Bookmassage::create($data);
-
         return redirect()->back()->with('success','Added successfuly');
     }
 

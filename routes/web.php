@@ -24,10 +24,10 @@ Route::get('nuatthaihome', function () {
 });
 
 Route::get('bookmassage', function () {
-    return view('website.pages.bookmassage');
+    return view('bookmassages.create');
 });
 
-Route::resource('pages','BookmassageController');
+Route::resource('bookmassages','BookmassageController');
 
 
 Route::get('accounts', function () {
@@ -37,7 +37,11 @@ Route::get('accounts', function () {
 Route::get('addaccount', function () {
     return view('admin.pages.accounts.addaccount');
 });
+Route::resource('massagereservations','BookmassageController');
 
+Route::get('massagereservations', function () {
+    return view('admin.pages.massagereservation.massagereservation');
+});
 Route::get('cabins', function () {
     return view('admin.pages.cabins.cabins');
 });
