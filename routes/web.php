@@ -26,7 +26,11 @@ Route::get('nuatthaihome', function () {
 Route::resource('bookmassagesave','BookmassageController');
 Route::get('bookmassage', function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return View::make('website.pages.bookmassage');
+=======
+    return view('bookmassages.create');
+>>>>>>> 0b4b90175dae78ce2791873253bcb033ff2db097
 =======
     return view('bookmassages.create');
 >>>>>>> 0b4b90175dae78ce2791873253bcb033ff2db097
