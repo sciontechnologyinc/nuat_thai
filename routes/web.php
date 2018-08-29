@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.pages.home');
 });
 
 Route::get('dashboard', function () {

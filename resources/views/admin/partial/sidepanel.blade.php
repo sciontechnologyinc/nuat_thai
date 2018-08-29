@@ -63,22 +63,22 @@
             <div class="collapse" id="maintenance">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/buttons.html">Branches</a>
+                  <a class="nav-link" href="">Branches</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                  <a class="nav-link" href="">What's New</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="">
               <i class="menu-icon mdi mdi-information-outline"></i>
               <span class="menu-title">Company Information</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/icons/font-awesome.html">
+            <a class="nav-link" href="">
               <i class="menu-icon mdi mdi-account-box-outline"></i>
               <span class="menu-title">Admin Settings</span>
             </a>

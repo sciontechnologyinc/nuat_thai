@@ -278,7 +278,7 @@
     .button {
         width: 181px;
         height: 50px;
-        background: #241364;
+        background: #080f74;
         -webkit-transition: all 200ms ease;
         -moz-transition: all 200ms ease;
         -ms-transition: all 200ms ease;
@@ -348,7 +348,7 @@
         left: 0;
         width: 265px;
         height: 100%;
-        background: #241364 !important;
+        background: #080f74 !important;
         z-index: 1;
     }
     
@@ -432,7 +432,7 @@
     
     .main_nav ul li.active,
     .main_nav ul li:hover {
-        background: #241364;
+        background: #080f74;
     }
     
     .main_nav ul li a {
@@ -1593,7 +1593,7 @@
     .aboutmain {
         margin-top: 1px;
         /* background-color: rgba(255,255,255,0.1); */
-        color: #241364 !important;
+        color: #080f74 !important;
         margin: 51px;
         padding-bottom: 27px;
         background: rgba(255, 255, 255, 0.2);
@@ -1855,7 +1855,7 @@
     .aboutmain {
         margin-top: 12px;
         /* background-color: rgba(255,255,255,0.1); */
-        color: #241364 !important;
+        color: #080f74 !important;
     }
     
     .hamburger i:hover {
@@ -1875,13 +1875,13 @@
     }
     
     button.btn.btn-success.mr-2.bookmassage {
-        background: #241364 !important;
-        border-color: #241364 !important;
+        background: #080f74 !important;
+        border-color: #080f74 !important;
     }
     
     button.btn.btn-success.mr-2.bookmassage:hover {
         background: #081123 !important;
-        border-color: #241364 !important;
+        border-color: #080f74!important;
         color: white;
     }
     
