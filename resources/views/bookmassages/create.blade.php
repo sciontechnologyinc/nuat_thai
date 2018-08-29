@@ -52,13 +52,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title"></h4>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 {!! Form::close() !!}

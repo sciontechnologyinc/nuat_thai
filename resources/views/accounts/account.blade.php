@@ -3,10 +3,7 @@
 @section('headerButton')
           <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                     <li class="nav-item active">
-                        <a href="#" class="nav-link">Reservation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Add Reservation</a>
+                        <a href="#" class="nav-link">Accounts</a>
                     </li>
             </ul>
 @endsection
@@ -17,31 +14,41 @@
     <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Cabins</h4>
+                  <h4 class="card-title">Accounts</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th>
-                            Cabin No.
+                            ID
                           </th>
                           <th>
-                            Cabin Name
+                            Full Name
                           </th>
                           <th>
-                            Description
+                            Contact No.
+                          </th>
+                          <th>
+                            Email Address
                           </th>
                         </tr>
                       </thead>
                       <tbody>
-                      @foreach($bookmassages as $bookmassage)    
-                       <tr>
-                          <td>{{ $bookmassage->fullname }}</td>
-                          <td>{{ $bookmassage->contactno }}</td>
-                          <td>{{ $bookmassage->noofreservation }}</td>
-                       </tr>
+                      <tr>
+                          <td>
+                           1
+                          </td>
+                          <td>
+                            Juan Dela Cruz
+                          </td>
+                          <td>
+                            09123468988
+                          </td>
+                          <td>
+                            juandelacruz@gmail.com
+                          </td>
+                        </tr>
                       </tbody>
-                      @endforeach
                     </table>
                   </div>
                 </div>

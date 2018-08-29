@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('admin.pages.home');
-});
 
 Route::get('dashboard', function () {
     return view('admin.pages.home');
@@ -25,62 +22,63 @@ Route::get('nuatthaihome', function () {
 
 Route::resource('bookmassagesave','BookmassageController');
 Route::get('bookmassage', function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     return View::make('website.pages.bookmassage');
-=======
+
     return view('bookmassages.create');
->>>>>>> 0b4b90175dae78ce2791873253bcb033ff2db097
-=======
-    return view('bookmassages.create');
->>>>>>> 0b4b90175dae78ce2791873253bcb033ff2db097
+
 });
 
 Route::resource('bookmassages','BookmassageController');
 
-
-Route::get('accounts', function () {
-    return view('admin.pages.accounts.account');
+Route::get('bookmassage', function () {
+    return view('bookmassages.create');
 });
 
+Route::get('accounts', function () {
+    return view('accounts.account');
+});
+
+
 Route::get('addaccount', function () {
-    return view('admin.pages.accounts.addaccount');
+    return view('accounts.addaccount');
 });
 Route::resource('massagereservations','BookmassageController');
 
 Route::get('massagereservations', function () {
-    return view('admin.pages.massagereservation.massagereservation');
+    return view('massagereservation.massagereservation');
 });
+
 Route::get('cabins', function () {
-    return view('admin.pages.cabins.cabins');
+    return view('cabins.cabins');
 });
 
 Route::get('addcabin', function () {
-    return view('admin.pages.cabins.addcabin');
+    return view('cabins.addcabin');
 });
 
-Route::get('therapists', function () {
-    return view('admin.pages.therapists.therapists');
+Route::get('staffs', function () {
+    return view('staffs.staffs');
 });
 
-Route::get('addtherapist', function () {
-    return view('admin.pages.therapists.addtherapist');
+Route::get('addstaff', function () {
+    return view('staffs.addstaffs');
 });
 
 Route::get('massagetype', function () {
-    return view('admin.pages.massagetype.massagetype');
+    return view('massagetype.massagetype');
 });
 
 Route::get('addmassagetype', function () {
-    return view('admin.pages.massagetype.addmassagetype');
+    return view('massagetype.addmassagetype');
 });
 
 Route::get('packages', function () {
-    return view('admin.pages.packages.packages');
+    return view('packages.packages');
 });
 
 Route::get('addpackage', function () {
-    return view('admin.pages.packages.addpackage');
+    return view('packages.addpackage');
 });
 
 Route::get('nuatthaiaboutus', function () {
@@ -90,6 +88,11 @@ Route::get('nuatthaiaboutus', function () {
 Route::get('nuatthaireservation', function () {
     return view('website.pages.reservation');
 });
+
+Route::get('bookingsummary', function () {
+    return view('website.pages.bookingsummary');
+});
+
 
 Auth::routes();
 

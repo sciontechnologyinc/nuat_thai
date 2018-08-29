@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Bookmassage;
+
 use Carbon\Carbon;
+
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Session;
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-namespace App\Http\Controllers;
+use function Psy\debug;
 
 class BookmassageController extends Controller
 {
@@ -34,9 +33,6 @@ class BookmassageController extends Controller
      */
     public function create()
     {
-
-        
-
         return view('bookmassages.create');
     }
 
@@ -48,15 +44,6 @@ class BookmassageController extends Controller
      */
     public function store(Request $request)
     {
-
-        $bookmasage = $request->all();
-        $data = $request->validate([
-           'fullname' => 'required',
-       ]);
-       Bookmassage::create($data);
-
-       Session::flash('success', ' Added successfully');
-       return redirect()->back()->with('success','Added successfuly');
         $bookmassage = $request->all();
          $data = $request->validate([
             'fullname' => 'required',
