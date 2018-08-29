@@ -37,7 +37,7 @@
                   <a class="nav-link" href="accounts">Accounts</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="massagereservations">Massage Reservation</a>
+                  <a class="nav-link" href="{{ url('bookmassages') }}">Massage Reservation</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="cabins">Cabins</a>

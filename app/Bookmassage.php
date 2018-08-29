@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bookmassage extends Model
 {
-    protected $table="bookmassage";
+    protected $table="bookmassages";
 	protected $fillable = [
         'fullname',
         'contactno',
