@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.pages.home');
 });
 
 Route::get('dashboard', function () {
@@ -23,11 +23,16 @@ Route::get('nuatthaihome', function () {
     return view('website.pages.home');
 });
 
+Route::resource('bookmassagesave','BookmassageController');
 Route::get('bookmassage', function () {
-    return view('website.pages.bookmassage');
+<<<<<<< HEAD
+    return View::make('website.pages.bookmassage');
+=======
+    return view('bookmassages.create');
+>>>>>>> 0b4b90175dae78ce2791873253bcb033ff2db097
 });
 
-Route::resource('pages','BookmassageController');
+Route::resource('bookmassages','BookmassageController');
 
 
 Route::get('accounts', function () {
@@ -37,7 +42,11 @@ Route::get('accounts', function () {
 Route::get('addaccount', function () {
     return view('admin.pages.accounts.addaccount');
 });
+Route::resource('massagereservations','BookmassageController');
 
+Route::get('massagereservations', function () {
+    return view('admin.pages.massagereservation.massagereservation');
+});
 Route::get('cabins', function () {
     return view('admin.pages.cabins.cabins');
 });

@@ -20,7 +20,7 @@
         </ul>
     </div>
  @endif
-{!! Form::open(['id' => 'dataForm', 'url' => 'bookmassage']) !!}
+{!! Form::open(['id' => 'dataForm', 'url' => 'bookmassagesave']) !!}
 <div class="container">
     <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
@@ -63,7 +63,7 @@
                             <option>G1 - 1.5 hr Hot Stone Massage + 30 mins Head Massage</option>
                         </select>
                     </div>
-                    {!!Form::submit('Create Category', ['id' => 'addForm','class' => 'btn btn-primary  col-lg-2 offset-7']) !!}
+                    {!!Form::submit('Create BookMassage', ['id' => 'addForm','class' => 'btn btn-primary  col-lg-2 offset-7']) !!}
                 </div>
             </div>
         </div>
