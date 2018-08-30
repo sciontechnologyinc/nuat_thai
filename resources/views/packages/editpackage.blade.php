@@ -1,12 +1,12 @@
 @extends('admin.master.template')
 
 @section('headerButton')
-<ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+          <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                     <li class="nav-item">
-                        <a href="{{ url('staffs')}}" class="nav-link">Staffs</a>
+                        <a href="packages" class="nav-link">Packages</a>
                     </li>
                     <li class="nav-item  active">
-                        <a href="{{ url('addstaffs')}}" class="nav-link">Add Staff</a>
+                        <a href="#" class="nav-link">Add Package</a>
                     </li>
             </ul>
 @endsection
@@ -29,28 +29,24 @@
         </ul>
     </div>
  @endif
-{!! Form::open(['id' => 'dataForm', 'url' => '/staffs']) !!}
+ {!! Form::open(['id' => 'dataForm', 'method' => 'PATCH', 'url' => '/packages/' . $package->id ]) !!}
 <div class="content-wrapper">
 <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Add Staff</h4>
+                  <h4 class="card-title">Edit Package</h4>
                   <form class="forms-sample">
                     <div class="form-group">
-                    {!!Form::label('staffid', 'Staff ID', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('staffid',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::label('packagecode', 'Package Code', array('class' => 'form-control-label'))!!}
+                    {!!Form::text('packagecode',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
-                    {!!Form::label('staffname', 'Staff Name', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('staffname',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::label('packagedescription', 'Package Description', array('class' => 'form-control-label'))!!}
+                    {!!Form::text('packagedescription',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
-                    {!!Form::label('contactno', 'Contact No.', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('contactno',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
-                    </div>
-                    <div class="form-group">
-                    {!!Form::label('type', 'Type', array('class' => 'form-control-label'))!!}
-                    {!!Form::select('type', array('Receptionist' => 'Receptionist', 'Therapist' => 'Therapist')) !!}
+                    {!!Form::label('price', 'Price', array('class' => 'form-control-label'))!!}
+                    {!!Form::text('price',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     {!!Form::submit('Submit', ['id' => 'addForm','class' => 'btn btn-success mr-2']) !!}
                     <button class="btn btn-light">Cancel</button>
@@ -61,5 +57,4 @@
 </div>
 {!! Form::close() !!}
 </div>
-
 @endsection

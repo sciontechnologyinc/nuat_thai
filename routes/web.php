@@ -60,13 +60,10 @@ Route::get('addcabin', function () {
     return view('cabins.addcabin');
 });
 
-Route::get('staffs', function () {
-    return view('staffs.staffs');
-});
-
 Route::get('addstaff', function () {
     return view('staffs.addstaff');
 });
+Route::resource('staffs','StaffController');
 
 Route::get('massagetype', function () {
     return view('massagetype.massagetype');
@@ -79,6 +76,7 @@ Route::get('addmassagetype', function () {
 Route::get('packages', function () {
     return view('packages.packages');
 });
+Route::resource('packages','PackageController');
 
 Route::get('branches', function () {
     return view('branches.branches');

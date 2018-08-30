@@ -37,18 +37,23 @@
                     </div>
                     <div class="form-group">
                     {!!Form::label('noofreservation', 'No of Reservation', array('class' => 'form-control-label'))!!}
-                    {!!Form::select('noofreservation', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6')) !!}
+                    {!!Form::select('noofreservation', array('1' => '1', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6'), ['class' => 'form-control col-lg-12', 'required' => '' ]) !!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('datetime', 'Date/Time', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('datetime',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::time('datetime',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('package', 'Package', array('class' => 'form-control-label'))!!}
-                    {!!Form::select('package', array('1' => 'A1 - 1 hr Thai Body Massage + 30 ins Head Massage', '2' => '2','3' => '3', '4' => '4','5' => '5', '6' => '6')) !!}
+                    {!!Form::select('package', array('A1' => 'A1', 
+                        'B1' => 'B1',
+                        'C1' => 'C1', 
+                        'D1' => 'D1',
+                        'E1' => 'E1', 
+                        'F1' => 'F1'),['class' => 'form-control col-lg-12', 'required' => '' ]) !!}
                     </div>
 
-                    {!!Form::submit('Make Reservation', ['id' => 'addForm','class' => 'btn btn-primary  col-lg-5 offset-6']) !!}
+                    {!!Form::submit('Make Reservation', ['id' => 'addForm','class' => 'form-control btn btn-primary  col-lg-5 offset-6']) !!}
                 </div>
             </div>
         </div>

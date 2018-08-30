@@ -31,20 +31,35 @@
                           <th>
                             Price
                           </th>
+                          <th>
+                            Action
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach($packages as $package)
                       <tr>
                           <td>
-                           A1
+                          {{ $package->packagecode }}
                           </td>
                           <td>
-                            1 hr Thai Massage + 30 mins Head Massage
+                          {{ $package->packagedescription }}
                           </td>
                           <td>
-                            400
+                          {{ $package->price }}
+                          </td>
+                          <td>
+                          <center>
+                          <div class="form-group" style="display:inline-flex">
+                          <a rel="tooltip" title="Edit" class="btn btn-success btn-sm mr-1" href="packages/{!! $package->id !!}/edit"><i class="fa fa-edit"></i></a>
+                          {!! Form::open(['id' => 'deleteForm', 'method' => 'DELETE', 'url' => '/packages/' . $package->id]) !!}
+                          {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'rel' => 'tooltip', 'title' => 'Delete'] )  }}
+                          {!! Form::close() !!}
+                          </div>
+                          </center>
                           </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

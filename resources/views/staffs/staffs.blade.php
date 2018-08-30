@@ -34,23 +34,37 @@
                           <th>
                             Type
                           </th>
+                          <th>
+                            Action
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach($staffs as $staff)
                       <tr>
                           <td>
-                           001
+                          {{ $staff->staffid }}
                           </td>
                           <td>
-                            Maria Reyes
+                          {{ $staff->staffname }}
                           </td>
                           <td>
-                           09123456789
+                          {{ $staff->contactno }}
                           </td>
                           <td>
-                           Receptionist
+                          {{ $staff->type }}
                           </td>
-                        </tr>
+                          <td><center>
+                          <div class="form-group" style="display:inline-flex">
+                          <a rel="tooltip" title="Edit" class="btn btn-success btn-sm mr-1" href="staffs/{!! $staff->id !!}/edit"><i class="fa fa-edit"></i></a>
+                          {!! Form::open(['id' => 'deleteForm', 'method' => 'DELETE', 'url' => '/staffs/' . $staff->id]) !!}
+                          {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'rel' => 'tooltip', 'title' => 'Delete'] )  }}
+                          {!! Form::close() !!}
+                          </div>
+                          </center>
+                          </td>
+                          </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

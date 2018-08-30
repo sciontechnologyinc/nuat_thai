@@ -1,18 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Bookmassage;
+use App\Packages;
 
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-use Illuminate\Support\Facades\Session;
-
-use function Psy\debug;
-
-class BookmassageController extends Controller
+class PackageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,10 +17,9 @@ class BookmassageController extends Controller
      */
     public function index()
     {
-        $bookmassages = Bookmassage::orderBy('id')->get();
-        return view('bookmassages.index', ['bookmassages' => $bookmassages]);
-        return view('website.pages.reservation', ['bookmassages' => $bookmassages]);
-
+        $packages = Packages::orderBy('id')->get();
+        return view('packages.packages', ['packages' => $packages]);
+        return view('bookmassages.create', ['packages' => $packages]);
     }
 
     /**
@@ -34,7 +29,7 @@ class BookmassageController extends Controller
      */
     public function create()
     {
-        return view('bookmassages.create');
+        return view('packages.addpackage');
     }
 
     /**
@@ -45,17 +40,15 @@ class BookmassageController extends Controller
      */
     public function store(Request $request)
     {
-        $bookmassage = $request->all();
-         $data = $request->validate([
-            'fullname' => 'required',
-            'contactno' => 'required',
-            'noofreservation' => 'required',
-            'datetime' => 'required',
-            'package' => 'required',
-            
-        ]);
-        Bookmassage::create($data);
-        return redirect()->back()->with('success','Added successfuly');
+        $packages = $request->all();
+        $data = $request->validate([
+           'packagecode' => 'required',
+           'packagedescription' => 'required',
+           'price' => 'required'
+           
+       ]);
+       Packages::create($data);
+       return redirect()->back()->with('success','Added successfuly');
     }
 
     /**
@@ -77,7 +70,8 @@ class BookmassageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $package = Packages::find($id);
+        return view('packages.editpackage', ['package' => $package]);
     }
 
     /**
@@ -89,7 +83,12 @@ class BookmassageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $package = Packages::find($id);
+        $data = $request->all();
+        $package->update($data);
+
+
+        return redirect('/packages')->with('success','Updated successfuly');
     }
 
     /**
@@ -100,6 +99,10 @@ class BookmassageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $packages = Packages::find($id);
+	    $packages->destroy($id);
+
+
+	    return redirect()->back()->with('success','Deleted successfuly');
     }
 }

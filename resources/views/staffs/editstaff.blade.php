@@ -1,7 +1,7 @@
 @extends('admin.master.template')
 
 @section('headerButton')
-<ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+          <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                     <li class="nav-item">
                         <a href="{{ url('staffs')}}" class="nav-link">Staffs</a>
                     </li>
@@ -28,25 +28,25 @@
           @endforeach
         </ul>
     </div>
- @endif
-{!! Form::open(['id' => 'dataForm', 'url' => '/staffs']) !!}
+            @endif
+            {!! Form::open(['id' => 'dataForm', 'method' => 'PATCH', 'url' => '/staffs/' . $staff->id ]) !!}
 <div class="content-wrapper">
 <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Add Staff</h4>
+                  <h4 class="card-title">Edit Staff</h4>
                   <form class="forms-sample">
                     <div class="form-group">
                     {!!Form::label('staffid', 'Staff ID', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('staffid',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('staffid',$staff->staffid, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('staffname', 'Staff Name', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('staffname',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('staffname',$staff->staffname, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('contactno', 'Contact No.', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('contactno',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('contactno',$staff->contactno, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('type', 'Type', array('class' => 'form-control-label'))!!}

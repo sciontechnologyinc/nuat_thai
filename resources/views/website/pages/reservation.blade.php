@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="container reservation-page">
-    <div class="reservation-title">RESERVATION</div>
-    <div class="reservation-desc">Check available schedule for massage and other information</div>
-
+    <div class="reservation-title">RESERVATIONS</div>
+    <div class="reservation-desc">Check existing reservations.</div>
     <table class="table table-sm table-dark">
   <thead>
     <tr>
@@ -13,14 +12,12 @@
     </tr>
   </thead>
   <tbody>
+    @foreach ($bookmassages as $bookmassage)
     <tr class="bg-success">
       <th scope="row">05:00 AM</th>
       <td>08-28-2018</td>
     </tr>
-    <tr class="bg-danger">
-      <th scope="row">10:00 AM</th>
-      <td>08-28-2018</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 </div>  

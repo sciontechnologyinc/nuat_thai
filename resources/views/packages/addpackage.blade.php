@@ -13,6 +13,23 @@
 
 @section('content')
 <div class="main-panel">
+@if($message = Session::get('success'))
+    <div class="alert alert-success">
+        <p>{{ $message }}</p>
+    </div>
+@endif
+
+ @if(count($errors) > 0 )
+    <div class="alert alert-danger">
+        <strong>Whoooppss !!</strong> There were some problem with your input. <br>
+        <ul>
+          @foreach($errors->all() as $error)
+              <li> {{ $error }} </li>
+          @endforeach
+        </ul>
+    </div>
+ @endif
+{!! Form::open(['id' => 'dataForm', 'url' => '/packages']) !!}
 <div class="content-wrapper">
 <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
@@ -20,23 +37,24 @@
                   <h4 class="card-title">Add Package</h4>
                   <form class="forms-sample">
                     <div class="form-group">
-                      <label for="packagecode">Package Code</label>
-                      <input type="text" class="form-control" id="packagecode" placeholder="">
+                    {!!Form::label('packagecode', 'Package Code', array('class' => 'form-control-label'))!!}
+                    {!!Form::text('packagecode',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
-                      <label for="packagedescription">Package Description</label>
-                      <input type="text" class="form-control" id="packagedescription" placeholder="">
+                    {!!Form::label('packagedescription', 'Package Description', array('class' => 'form-control-label'))!!}
+                    {!!Form::text('packagedescription',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
-                      <label for="price">Price</label>
-                      <input type="text" class="form-control" id="price" placeholder="">
+                    {!!Form::label('price', 'Price', array('class' => 'form-control-label'))!!}
+                    {!!Form::text('price',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
-                    <button type="submit" class="btn btn-success mr-2">Submit</button>
+                    {!!Form::submit('Submit', ['id' => 'addForm','class' => 'btn btn-success mr-2']) !!}
                     <button class="btn btn-light">Cancel</button>
                   </form>
                 </div>
               </div>
             </div>
 </div>
+{!! Form::close() !!}
 </div>
 @endsection

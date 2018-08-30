@@ -21216,3 +21216,11 @@
     a.dropdown-item {
         cursor: pointer;
     }
+    
+    .btn-success:not(:disabled):not(.disabled):active,
+    .btn-success:not(:disabled):not(.disabled).active,
+    .show>.btn-success.dropdown-toggle {
+        color: #fff;
+        background-color: #de9f00;
+        border-color: #de9f00;
+    }

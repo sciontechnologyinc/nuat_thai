@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Bookmassage;
+use App\Staffs;
 
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Session;
-
 use function Psy\debug;
 
-class BookmassageController extends Controller
+class StaffController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,9 +20,8 @@ class BookmassageController extends Controller
      */
     public function index()
     {
-        $bookmassages = Bookmassage::orderBy('id')->get();
-        return view('bookmassages.index', ['bookmassages' => $bookmassages]);
-        return view('website.pages.reservation', ['bookmassages' => $bookmassages]);
+        $staffs = Staffs::orderBy('id')->get();
+        return view('staffs.staffs', ['staffs' => $staffs]);
 
     }
 
@@ -34,7 +32,7 @@ class BookmassageController extends Controller
      */
     public function create()
     {
-        return view('bookmassages.create');
+        return view('staffs.addstaff');
     }
 
     /**
@@ -45,17 +43,16 @@ class BookmassageController extends Controller
      */
     public function store(Request $request)
     {
-        $bookmassage = $request->all();
-         $data = $request->validate([
-            'fullname' => 'required',
-            'contactno' => 'required',
-            'noofreservation' => 'required',
-            'datetime' => 'required',
-            'package' => 'required',
-            
-        ]);
-        Bookmassage::create($data);
-        return redirect()->back()->with('success','Added successfuly');
+        $staffs = $request->all();
+        $data = $request->validate([
+           'staffid' => 'required',
+           'staffname' => 'required',
+           'contactno' => 'required',
+           'type' => 'required'
+           
+       ]);
+       Staffs::create($data);
+       return redirect()->back()->with('success','Added successfuly');
     }
 
     /**
@@ -77,7 +74,8 @@ class BookmassageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $staff = Staffs::find($id);
+        return view('staffs.editstaff', ['staff' => $staff]);
     }
 
     /**
@@ -89,7 +87,12 @@ class BookmassageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $staff = Staffs::find($id);
+        $data = $request->all();
+        $staff->update($data);
+
+
+        return redirect('/staffs')->with('success','Updated successfuly');
     }
 
     /**
@@ -100,6 +103,10 @@ class BookmassageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $staffs = Staffs::find($id);
+	    $staffs->destroy($id);
+
+
+	    return redirect()->back()->with('success','Deleted successfuly');
     }
 }
