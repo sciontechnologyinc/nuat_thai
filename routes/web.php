@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/', function () {
+    return view('home');
+});
 
 Route::get('dashboard', function () {
     return view('admin.pages.home');
@@ -76,6 +79,19 @@ Route::get('addmassagetype', function () {
 Route::get('packages', function () {
     return view('packages.packages');
 });
+
+Route::get('branches', function () {
+    return view('branches.branches');
+});
+
+Route::get('addbranch', function () {
+    return view('branches.addbranch');
+});
+
+Route::get('companyinformation', function () {
+    return view('companyinformation.companyinformation');
+});
+
 
 Route::get('addpackage', function () {
     return view('packages.addpackage');

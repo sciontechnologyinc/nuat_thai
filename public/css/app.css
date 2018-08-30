@@ -4428,7 +4428,7 @@ input[type=submit].btn-block {
 }
 
 .navbar-brand {
-    display: inline-block;
+    display: none;
     padding-top: .32rem;
     padding-bottom: .32rem;
     margin-right: 1rem;
@@ -9673,8 +9673,8 @@ a.text-dark:hover {
 
 @media print {
     *,
-    :after,
-    :before {
+     :after,
+     :before {
         text-shadow: none!important;
         -webkit-box-shadow: none!important;
         box-shadow: none!important
