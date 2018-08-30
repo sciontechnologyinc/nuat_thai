@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    You are logged out!
+                    Welcome to Nuat Thai!
                 </div>
             </div>
         </div>

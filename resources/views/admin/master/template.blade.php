@@ -35,4 +35,6 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="js/dashboard.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  
 </html>

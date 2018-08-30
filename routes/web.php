@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Route::get('dashboard', function () {
@@ -65,7 +65,7 @@ Route::get('staffs', function () {
 });
 
 Route::get('addstaff', function () {
-    return view('staffs.addstaffs');
+    return view('staffs.addstaff');
 });
 
 Route::get('massagetype', function () {

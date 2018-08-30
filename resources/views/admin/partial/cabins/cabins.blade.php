@@ -3,10 +3,10 @@
 @section('headerButton')
           <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                     <li class="nav-item active">
-                        <a href="#" class="nav-link">Staffs</a>
+                        <a href="#" class="nav-link">Cabins</a>
                     </li>
                     <li class="nav-item">
-                        <a href="addstaff" class="nav-link">Add Staff</a>
+                        <a href="addcabin" class="nav-link">Add Cabin</a>
                     </li>
             </ul>
 @endsection
@@ -17,38 +17,32 @@
     <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Staffs</h4>
+                  <h4 class="card-title">Cabins</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
                           <th>
-                            Staff ID
+                            Cabin No.
                           </th>
                           <th>
-                            Staff Name
+                            Cabin Name
                           </th>
                           <th>
-                            Contact No.
-                          </th>
-                          <th>
-                            Type
+                            Description
                           </th>
                         </tr>
                       </thead>
                       <tbody>
                       <tr>
                           <td>
-                           001
+                           Cabin 1
                           </td>
                           <td>
-                            Maria Reyes
+                            First Cabin
                           </td>
                           <td>
-                           09123456789
-                          </td>
-                          <td>
-                           Receptionist
+                            Clean Cabin
                           </td>
                         </tr>
                       </tbody>

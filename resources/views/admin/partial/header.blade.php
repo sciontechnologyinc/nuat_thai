@@ -93,13 +93,10 @@
               <a class="dropdown-item">
                 Check Inbox
               </a>
-              <a class="dropdown-item" href="{{ route('login') }}" onclick="event.preventDefault();
-                  document.getElementById('logout-form').submit();">
+              <a class="dropdown-item" data-toggle="modal" data-target="#myModal">
                   Sign Out
               </a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-              </form>
+              
             </div>
           </li>
         </ul>
@@ -108,3 +105,30 @@
         </button>
       </div>
     </nav>
+
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" >&times;</button>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+        <h4 class="modal-title">Sign Out Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you really want to sign out?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="signout-btn" type="submit" class="btn btn-success mr-2" onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">Sign Out</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="js/admin.js"></script>

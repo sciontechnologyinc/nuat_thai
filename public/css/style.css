@@ -21208,3 +21208,11 @@
         background-color: white;
         border-color: white;
     }
+    
+    .modal-header {
+        display: block !important;
+    }
+    
+    a.dropdown-item {
+        cursor: pointer;
+    }
