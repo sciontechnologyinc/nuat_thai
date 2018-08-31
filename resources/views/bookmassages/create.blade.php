@@ -49,9 +49,9 @@
                        <div class="iconic-input">
                             <div class="input-group margin-bottom-sm">
                             <span class="input-group-addon">
-                            <i class="fa fa-bank"></i></span>
+                            </span>
                             <select name="department" class="form-control">
-                                    <option value="" disabled {{ old('department') ? '' : 'selected' }}>Choose a deparment</option>
+                                    <option value="" disabled {{ old('department') ? '' : 'selected' }}>Choose a Package</option>
                                     @foreach($packages as $package)
                                         <option value="{{$package->id}}" {{ old('package') ? 'selected' : '' }}>{{$package->packagedescription}}</option>
                                     @endforeach

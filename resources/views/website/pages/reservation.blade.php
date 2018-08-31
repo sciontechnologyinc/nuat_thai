@@ -8,7 +8,7 @@
   <thead>
     <tr>
       <th scope="col">Time</th>
-      <th scope="col">Date</th>
+      <th scope="col">No Of Reservation</th>
     </tr>
   </thead>
   <tbody>
