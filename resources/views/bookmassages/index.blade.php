@@ -29,7 +29,7 @@
                             No Of. Reservation
                           </th>
                           <th>
-                            Date/Time
+                            Time
                           </th>
                           <th>
                             Package

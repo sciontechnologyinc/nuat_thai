@@ -14,8 +14,8 @@
   <tbody>
     @foreach($bookmassages as $bookmassage)
     <tr class="bg-success">
-      <th scope="row">{{ $bookmassage->datetime }}</th>
-      <td>{{ $bookmassage->noofreservation }}</td
+      <td>{{ $bookmassage->datetime }}</td>
+      <td>{{ $bookmassage->noofreservation }}</td>
     </tr>
     @endforeach
   </tbody>
