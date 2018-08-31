@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                     {!!Form::label('price', 'Price', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('price',$package->price, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('price',$package->price, ['placeholder' => '0.00', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     {!!Form::submit('Submit', ['id' => 'addForm','class' => 'btn btn-success mr-2']) !!}
                     <button class="btn btn-light">Cancel</button>
