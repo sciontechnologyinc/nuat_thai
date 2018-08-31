@@ -78,6 +78,7 @@ Route::get('packages', function () {
 });
 Route::resource('packages','PackageController');
 
+
 Route::get('branches', function () {
     return view('branches.branches');
 });
@@ -111,3 +112,8 @@ Route::get('bookingsummary', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('bookmassages/create','PackageController@packagedropdown');
+
+Route::get('website/pages/reservation','BookmassageController@packagedropdown');

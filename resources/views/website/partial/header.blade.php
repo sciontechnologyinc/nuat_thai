@@ -21,7 +21,7 @@
 									<li><a href="nuatthaireservation"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>reservation</span></div></a></li>
 								</ul>
 							</nav>
-							<a href="{{ url('bookmassage') }}" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Massage</span></div></a>
+							<a href="{{ url('bookmassages/create') }}" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Massage</span></div></a>
 							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 						</div>
 					</div>

@@ -12,10 +12,10 @@
     </tr>
   </thead>
   <tbody>
-    @foreach ($bookmassages as $bookmassage)
+    @foreach($bookmassages as $bookmassage)
     <tr class="bg-success">
-      <th scope="row">05:00 AM</th>
-      <td>08-28-2018</td>
+      <th scope="row">{{ $bookmassage->datetime }}</th>
+      <td>{{ $bookmassage->noofreservation }}</td
     </tr>
     @endforeach
   </tbody>

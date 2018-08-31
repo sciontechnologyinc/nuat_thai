@@ -23,6 +23,12 @@ class BookmassageController extends Controller
     {
         $bookmassages = Bookmassage::orderBy('id')->get();
         return view('bookmassages.index', ['bookmassages' => $bookmassages]);
+
+    }
+
+    public function reservation()
+    {
+        $bookmassages = Bookmassage::orderBy('id')->get();
         return view('website.pages.reservation', ['bookmassages' => $bookmassages]);
 
     }
