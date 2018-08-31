@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nuat Thai</title>
     <link rel="stylesheet" type="text/css" href="website/styles/bootstrap-4.1.2/bootstrap.min.css">
-    <link href="website/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="website/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="website/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="website/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="website/plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="website/styles/main_styles.css">
-    <link rel="stylesheet" type="text/css" href="website/styles/news_responsive.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="{!! asset('website/plugins/font-awesome-4.7.0/css/font-awesome.min.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('website/plugins/colorbox/colorbox.css') !!}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{!! asset('website/plugins/OwlCarousel2-2.2.1/owl.carousel.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('website/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('website/plugins/OwlCarousel2-2.2.1/animate.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('website/styles/main_styles.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('website/styles/news_responsive.css') !!}">
+    <link rel="stylesheet" href="{!! asset('https://use.fontawesome.com/releases/v5.0.13/css/all.css') !!}" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
      <!-- Bootstrap core CSS -->
-     <link href="website/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="{!! asset('website/vendor/bootstrap/css/bootstrap.min.css') !!}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="website/css/full-slider.css" rel="stylesheet">
+    <link href="{!! asset('website/css/full-slider.css') !!}" rel="stylesheet">
     
 </head>
 <body>

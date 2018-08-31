@@ -20,7 +20,7 @@
         </ul>
     </div>
  @endif
-{!! Form::open(['id' => 'dataForm', 'url' => '/bookmassages']) !!}
+{!! Form::open(['id' => 'dataForm', 'url' => '/bookmassages', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 <div class="container">
     <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
@@ -44,19 +44,19 @@
                     {!!Form::time('datetime',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
 
-                    <div class="form-group">
-                       {!!Form::label('package', 'Packages', array('class' => 'form-control-label'))!!}
+                     <div class="form-group">
+                       {!!Form::label('package', 'Package', array('class' => 'form-control-label'))!!}
                        <div class="iconic-input">
                             <div class="input-group margin-bottom-sm">
                             <span class="input-group-addon">
                             <i class="fa fa-bank"></i></span>
-                            <select name="package" class="form-control">
-                                    <option value="" disabled {{ old('package') ? '' : 'selected' }}>Choose a Packages</option>
+                            <select name="department" class="form-control">
+                                    <option value="" disabled {{ old('department') ? '' : 'selected' }}>Choose a deparment</option>
                                     @foreach($packages as $package)
-                                        <option value="{{$package->id}}" {{ old('package') ? 'selected' : '' }}>{{$package->package}}</option>
+                                        <option value="{{$package->id}}" {{ old('package') ? 'selected' : '' }}>{{$package->packagedescription}}</option>
                                     @endforeach
                                 </select>
-                            </div>  
+                            </div>
                       </div>
                     </div>
 

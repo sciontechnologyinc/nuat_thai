@@ -21,11 +21,13 @@ class PackageController extends Controller
         return view('packages.packages', ['packages' => $packages]);
     }
 
-    public function packagedropdown()
+
+    public function packagesdropdown()
     {
 	    $packages = Packages::orderBy('id')->get();
         return view('bookmassages/create', ['packages' => $packages]);
     }
+
 
     /**
      * Show the form for creating a new resource.
