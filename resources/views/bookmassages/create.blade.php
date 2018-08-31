@@ -20,7 +20,7 @@
         </ul>
     </div>
  @endif
-{!! Form::open(['id' => 'dataForm', 'url' => '/bookmassages']) !!}
+{!! Form::open(['id' => 'dataForm', 'url' => '/bookmassages', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 <div class="container">
     <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
@@ -44,13 +44,19 @@
                     {!!Form::time('datetime',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
-                    {!!Form::label('package', 'Package', array('class' => 'form-control-label'))!!}
-                    {!!Form::select('package', array('A1' => 'A1', 
-                        'B1' => 'B1',
-                        'C1' => 'C1', 
-                        'D1' => 'D1',
-                        'E1' => 'E1', 
-                        'F1' => 'F1'),['class' => 'form-control col-lg-12', 'required' => '' ]) !!}
+                       {!!Form::label('package', 'Package', array('class' => 'form-control-label'))!!}
+                       <div class="iconic-input">
+                            <div class="input-group margin-bottom-sm">
+                            <span class="input-group-addon">
+                            <i class="fa fa-bank"></i></span>
+                            <select name="package" class="form-control">
+                                    <option value="" disabled {{ old('package') ? '' : 'selected' }}>Choose a package</option>
+                                    @foreach($packages as $package)
+                                        <option value="{{$package->id}}" {{ old('package') ? 'selected' : '' }}>{{$package->package}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                      </div>
                     </div>
 
                     {!!Form::submit('Make Reservation', ['id' => 'addForm','class' => 'form-control btn btn-primary  col-lg-5 offset-6']) !!}
