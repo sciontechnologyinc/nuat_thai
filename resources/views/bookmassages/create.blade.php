@@ -44,19 +44,19 @@
                     {!!Form::time('datetime',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
 
-                    <div class="form-group">
+                     <div class="form-group">
                        {!!Form::label('package', 'Package', array('class' => 'form-control-label'))!!}
-                       {!!Form::label('package', 'Packages', array('class' => 'form-control-label'))!!}
                        <div class="iconic-input">
                             <div class="input-group margin-bottom-sm">
                             <span class="input-group-addon">
                             <i class="fa fa-bank"></i></span>
-                            <select name="package" class="form-control">
-                                    <option value="" disabled {{ old('package') ? '' : 'selected' }}>Choose a package</option>
-                                        <option value="{{$package->id}}" {{ old('package') ? 'selected' : '' }}>{{$package->package}}</option>
+                            <select name="department" class="form-control">
+                                    <option value="" disabled {{ old('department') ? '' : 'selected' }}>Choose a deparment</option>
+                                    @foreach($packages as $package)
+                                        <option value="{{$package->id}}" {{ old('package') ? 'selected' : '' }}>{{$package->packagedescription}}</option>
+                                    @endforeach
                                 </select>
                             </div>
-                            </div>  
                       </div>
                     </div>
 

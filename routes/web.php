@@ -115,7 +115,4 @@ Route::get('bookmassages/create','PackageController@packagesdropdown');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-Route::get('bookmassages/create','PackageController@packagedropdown');
-
 Route::get('website/pages/reservation','BookmassageController@packagedropdown');

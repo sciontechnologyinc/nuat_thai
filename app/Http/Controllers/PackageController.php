@@ -21,11 +21,6 @@ class PackageController extends Controller
         return view('packages.packages', ['packages' => $packages]);
     }
 
-    public function packagedropdown()
-    {
-	    $packages = Packages::orderBy('id')->get();
-        return view('bookmassages/create', ['packages' => $packages]);
-    }
 
     public function packagesdropdown()
     {
