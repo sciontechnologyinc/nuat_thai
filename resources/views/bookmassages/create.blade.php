@@ -43,19 +43,32 @@
                     {!!Form::label('datetime', 'Date/Time', array('class' => 'form-control-label'))!!}
                     {!!Form::time('datetime',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
+
                     <div class="form-group">
+<<<<<<< HEAD
                        {!!Form::label('package', 'Package', array('class' => 'form-control-label'))!!}
+=======
+                       {!!Form::label('package', 'Packages', array('class' => 'form-control-label'))!!}
+>>>>>>> 662840c0f7038352e53ecc16536080ca6b8d0b09
                        <div class="iconic-input">
                             <div class="input-group margin-bottom-sm">
                             <span class="input-group-addon">
                             <i class="fa fa-bank"></i></span>
                             <select name="package" class="form-control">
+<<<<<<< HEAD
                                     <option value="" disabled {{ old('package') ? '' : 'selected' }}>Choose a package</option>
+=======
+                                    <option value="" disabled {{ old('package') ? '' : 'selected' }}>Choose a Packages</option>
+>>>>>>> 662840c0f7038352e53ecc16536080ca6b8d0b09
                                     @foreach($packages as $package)
                                         <option value="{{$package->id}}" {{ old('package') ? 'selected' : '' }}>{{$package->package}}</option>
                                     @endforeach
                                 </select>
+<<<<<<< HEAD
                             </div>
+=======
+                            </div>  
+>>>>>>> 662840c0f7038352e53ecc16536080ca6b8d0b09
                       </div>
                     </div>
 
