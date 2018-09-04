@@ -1,47 +1,54 @@
 @extends('admin.master.template')
-
+@section('headerButton')
+<ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+                    <li class="nav-item active">
+                        <a href="{{ url('companyinformation')}}" class="nav-link">Company Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('editcompanyinformation')}}" class="nav-link">Edit Company Information</a>
+                    </li>
+            </ul>
+@endsection
 @section('content')
+
 <div class="main-panel">
-<div class="content-wrapper">
-<div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
+    <div class="content-wrapper">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Company Information</h4>
-                  <form class="forms-sample">
+                    <h4 class="card-title">Company Information</h4>
                     <div class="form-group">
-                      <label for="companyname">Company Name</label>
-                      <input type="text" class="form-control" id="companyname" placeholder="">
+                    <label for="companyname">Company Name</label>
+                    <input type="text" class="form-control" placeholder="" readonly></input>
                     </div>
                     <div class="form-group">
-                      <label for="mission">Mission</label>
-                      <input type="text" class="form-control" id="mission" placeholder="">
+                    <label for="mission">Mission</label>
+                    <input type="text" class="form-control" placeholder="" readonly></input>
                     </div>
                     <div class="form-group">
-                      <label for="vision">Vision</label>
-                      <input type="text" class="form-control" id="vision" placeholder="">
+                    <label for="vision">Vision</label>
+                    <input type="text" class="form-control" placeholder="" readonly></input>
                     </div>
                     <div class="form-group">
-                      <label for="contactno">Contact No</label>
-                      <input type="text" class="form-control" id="contactno" placeholder="">
+                    <label for="contactno">Contact No.</label>
+                    <input type="text" class="form-control" placeholder="" readonly></input>
                     </div>
                     <div class="form-group">
-                      <label for="address">Address</label>
-                      <input type="text" class="form-control" id="address" placeholder="">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" placeholder="" readonly></input>
                     </div>
                     <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="text" class="form-control" id="email" placeholder="">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" placeholder="" readonly></input>
                     </div>
                     <div class="form-group">
-                      <label for="footerinfo">Footer Information</label>
-                      <input type="text" class="form-control" id="footerinfo" placeholder="">
+                    <label for="footerinformation">Footer Information</label>
+                    <input type="text" class="form-control" placeholder="" readonly></input>
                     </div>
-                    <button type="submit" class="btn btn-success mr-2">Save Changes</button>
-                    <button class="btn btn-light">Cancel</button>
-                  </form>
                 </div>
-              </div>
             </div>
+        </div>
+    </div>
 </div>
-</div>
+
 @endsection

@@ -91,6 +91,9 @@ Route::get('companyinformation', function () {
     return view('companyinformation.companyinformation');
 });
 
+Route::get('editcompanyinformation', function () {
+    return view('companyinformation.editcompanyinformation');
+});
 
 Route::get('addpackage', function () {
     return view('packages.addpackage');
