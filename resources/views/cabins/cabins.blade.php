@@ -31,20 +31,35 @@
                           <th>
                             Description
                           </th>
+                          <th>
+                            Action
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach($cabins as $cabin)
                       <tr>
                           <td>
-                           Cabin 1
+                          {{ $cabin->cabinno }}
                           </td>
                           <td>
-                            First Cabin
+                          {{ $cabin->cabinname }}
                           </td>
                           <td>
-                            Clean Cabin
+                          {{ $cabin->cabindescription }}
+                          </td>
+                          <td>
+                          <center>
+                          <div class="form-group" style="display:inline-flex">
+                          <a rel="tooltip" title="Edit" class="btn btn-success btn-sm mr-1" href="cabins/{!! $cabin->id !!}/edit"><i class="fa fa-edit"></i></a>
+                          {!! Form::open(['id' => 'deleteForm', 'method' => 'DELETE', 'url' => '/cabins/' . $cabin->id]) !!}
+                          {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'rel' => 'tooltip', 'title' => 'Delete'] )  }}
+                          {!! Form::close() !!}
+                          </div>
+                          </center>
                           </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

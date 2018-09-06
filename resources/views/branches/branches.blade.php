@@ -34,23 +34,38 @@
                           <th>
                             Contact No.
                           </th>
+                          <th>
+                            Action
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach($branches as $branch)
                       <tr>
                           <td>
-                           1
+                          {{ $branch->branchno }}
                           </td>
                           <td>
-                            Libis Nuat Thai
+                          {{ $branch->branchname }}
                           </td>
                           <td>
-                            Libis
+                          {{ $branch->address }}
                           </td>
                           <td>
-                            0912346789
+                          {{ $branch->contactno }}
+                          </td>
+                          <td>
+                          <center>
+                          <div class="form-group" style="display:inline-flex">
+                          <a rel="tooltip" title="Edit" class="btn btn-success btn-sm mr-1" href="branches/{!! $branch->id !!}/edit"><i class="fa fa-edit"></i></a>
+                          {!! Form::open(['id' => 'deleteForm', 'method' => 'DELETE', 'url' => '/branches/' . $branch->id]) !!}
+                          {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'rel' => 'tooltip', 'title' => 'Delete'] )  }}
+                          {!! Form::close() !!}
+                          </div>
+                          </center>
                           </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

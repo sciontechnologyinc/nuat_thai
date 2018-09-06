@@ -28,17 +28,35 @@
                           <th>
                             Massage Type Description
                           </th>
+                          <th>
+                            Price
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach($massagetypes as $massagetype)
                       <tr>
                           <td>
-                           Thai Massage
+                          {{ $massagetype->massagetypename }}
                           </td>
                           <td>
-                            Thai Massage 
+                          {{ $massagetype->massagetypedescription }}
+                          </td>
+                          <td>
+                          {{ $massagetype->price }}
+                          </td>
+                          <td>
+                          <center>
+                          <div class="form-group" style="display:inline-flex">
+                          <a rel="tooltip" title="Edit" class="btn btn-success btn-sm mr-1" href="massagetypes/{!! $massagetype->id !!}/edit"><i class="fa fa-edit"></i></a>
+                          {!! Form::open(['id' => 'deleteForm', 'method' => 'DELETE', 'url' => '/massagetypes/' . $massagetype->id]) !!}
+                          {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'rel' => 'tooltip', 'title' => 'Delete'] )  }}
+                          {!! Form::close() !!}
+                          </div>
+                          </center>
                           </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

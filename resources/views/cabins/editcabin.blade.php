@@ -30,7 +30,8 @@
         </ul>
     </div>
  @endif
-{!! Form::open(['id' => 'dataForm', 'url' => '/cabins']) !!}
+ {!! Form::open(['id' => 'dataForm', 'method' => 'PATCH', 'url' => '/cabins/' . $cabin->id ]) !!}
+
 <div class="content-wrapper">
 <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
@@ -39,15 +40,15 @@
                   <form class="forms-sample">
                     <div class="form-group">
                     {!!Form::label('cabinno', 'Cabin No', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('cabinno',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('cabinno',$cabin->cabinno, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('cabinname', 'Cabin Name', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('cabinname',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('cabinname',$cabin->cabinname, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('cabindescription', 'Cabin Description', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('cabindescription',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('cabindescription',$cabin->cabindescription, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     {!!Form::submit('Submit', ['id' => 'addForm','class' => 'btn btn-success mr-2']) !!}
                     <button class="btn btn-light">Cancel</button>

@@ -55,6 +55,8 @@ Route::get('massagereservations', function () {
 Route::get('cabins', function () {
     return view('cabins.cabins');
 });
+Route::resource('cabins','CabinController');
+
 
 Route::get('addcabin', function () {
     return view('cabins.addcabin');
@@ -65,13 +67,14 @@ Route::get('addstaff', function () {
 });
 Route::resource('staffs','StaffController');
 
-Route::get('massagetype', function () {
-    return view('massagetype.massagetype');
+Route::get('massagetypes', function () {
+    return view('massagetypes.massagetypes');
 });
 
 Route::get('addmassagetype', function () {
-    return view('massagetype.addmassagetype');
+    return view('massagetypes.addmassagetype');
 });
+Route::resource('massagetypes','MassagetypeController');
 
 Route::get('packages', function () {
     return view('packages.packages');
@@ -86,6 +89,8 @@ Route::get('branches', function () {
 Route::get('addbranch', function () {
     return view('branches.addbranch');
 });
+Route::resource('branches','BranchController');
+
 
 Route::get('companyinformation', function () {
     return view('companyinformation.companyinformation');
@@ -98,6 +103,7 @@ Route::get('editcompanyinformation', function () {
 Route::get('addpackage', function () {
     return view('packages.addpackage');
 });
+
 
 Route::get('nuatthaiaboutus', function () {
     return view('website.pages.aboutus');

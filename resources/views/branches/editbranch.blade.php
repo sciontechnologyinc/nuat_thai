@@ -29,35 +29,35 @@
         </ul>
     </div>
  @endif
-{!! Form::open(['id' => 'dataForm', 'url' => '/branches']) !!}
+ {!! Form::open(['id' => 'dataForm', 'method' => 'PATCH', 'url' => '/branches/' . $branch->id ]) !!}
 <div class="content-wrapper">
-<div class="col-md-6 grid-margin stretch-card">
+    <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Add Branch</h4>
                   <form class="forms-sample">
                     <div class="form-group">
                     {!!Form::label('branchno', 'Branch No', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('branchno',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('branchno',$branch->branchno, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('branchname', 'Branch Name', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('branchname',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('branchname',$branch->branchname, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('address', 'Branch Address', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('address',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('address',$branch->address, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     <div class="form-group">
                     {!!Form::label('contactno', 'Contact No', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('contactno',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
+                    {!!Form::text('contactno',$branch->contactno, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
                     {!!Form::submit('Submit', ['id' => 'addForm','class' => 'btn btn-success mr-2']) !!}
                     <button class="btn btn-light">Cancel</button>
                   </form>
                 </div>
               </div>
-            </div>
+    </div>
 </div>
 {!! Form::close() !!}
 </div>

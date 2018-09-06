@@ -27,7 +27,7 @@
                   <a class="nav-link" href="staffs">Staffs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="massagetype">Massage Types</a>
+                  <a class="nav-link" href="massagetypes">Massage Types</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="packages">Packages</a>
