@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Bookmassage;
 use App\Packages;
-
+use Calendar;
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
@@ -24,8 +25,41 @@ class PackageController extends Controller
 
     public function packagesdropdown()
     {
+        $events = Bookmassage::where("status", "=", "Pending")->get();
+        $event_list = [];
+        foreach($events as $key => $event) {
+            $date = date_format(date_create($event->datetime),"Y/m/d H:i:s");
+            $event_list[] = Calendar::event(
+                'Not Available',
+                false,
+                $date,
+                $date.' +1 hour'
+            );
+        }
+        $bookmassages = Calendar::addEvents($event_list);
+        $bookmassages->setOptions([
+            "defaultView" => 'agendaWeek',
+            "allDaySlot" => false,
+            "selectable" => true,
+            "height"=> "auto",
+            "minTime" =>  "10:00:00",
+            "hiddenDays"=> [ 6, 0 ],
+            "maxTime" => "18:00:00",
+            "header"=> [
+                "left"=> 'prev,next',
+                "center"=> 'title',
+                "right"=> ''
+            ]
+        ])
+        ->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
+            "dayClick" => "function(date, jsEvent, view) {
+                $('#reserve').modal('show'); 
+                $('[name=resvdate]').val(date.format('YYYY-MM-DD'));
+                $('[name=resvtime]').val(date.format('HH:mm:ss'));
+            }"
+        ]);
 	    $packages = Packages::orderBy('id')->get();
-        return view('bookmassages/create', ['packages' => $packages]);
+        return view('bookmassages/create', ['bookmassages' => $bookmassages, 'packages' => $packages]);
     }
 
 

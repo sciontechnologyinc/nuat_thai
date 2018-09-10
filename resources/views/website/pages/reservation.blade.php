@@ -2,23 +2,57 @@
 
 @section('content')
 <div class="container reservation-page">
-    <div class="reservation-title">RESERVATIONS</div>
-    <div class="reservation-desc">Check existing reservations.</div>
-    <table class="table table-sm table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Time</th>
-      <th scope="col">No Of Reservation</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach($bookmassages as $bookmassage)
-    <tr class="bg-success">
-      <td>{{ $bookmassage->datetime }}</td>
-      <td>{{ $bookmassage->noofreservation }}</td>
-    </tr>
-    @endforeach
-  </tbody>
-</table>
-</div>  
+    <div class="reservation-title mx-0 px-0">RESERVATIONS</div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>
+                Package Code
+              </th>
+              <th>
+                Package Description
+              </th>
+              <th>
+                Price
+              </th>
+              <th>
+                No. of Reservation
+              </th>
+              <th>
+                Date
+              </th>
+              <th>
+                Status
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+          @foreach($packages as $package)
+          <tr>
+              <td>
+              {{ $package->packagecode }}
+              </td>
+              <td>
+              {{ $package->packagedescription }}
+              </td>
+              <td>
+              {{ $package->price }}
+              </td>
+              <td>
+                {{ $package->noofreservation }}
+              </td>
+              <td>
+                {{ $package->datetime }}
+              </td>
+              <td>
+                {{ $package->status }}
+              </td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    <br />
+</div>
 @endsection

@@ -25,11 +25,8 @@ Route::get('nuatthaihome', function () {
 
 Route::resource('bookmassagesave','BookmassageController');
 Route::get('bookmassage', function () {
-
     return View::make('website.pages.bookmassage');
-
     return view('bookmassages.create');
-
 });
 
 Route::resource('bookmassages','BookmassageController');
@@ -119,7 +116,8 @@ Route::get('bookingsummary', function () {
 
 
 Auth::routes();
-
+Route::get('bookmassages','BookmassageController@index');
+Route::post('bookmassages/update','BookmassageController@update');
 Route::get('bookmassages/create','PackageController@packagesdropdown');
 Route::get('website/pages/reservation','BookmassageController@reservation');
 

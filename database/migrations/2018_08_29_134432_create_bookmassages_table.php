@@ -18,8 +18,9 @@ class CreateBookmassagesTable extends Migration
             $table->string('fullname');
             $table->string('contactno');
             $table->string('noofreservation');
-            $table->string('datetime')->default('test');
+            $table->datetime('datetime');
             $table->string('package');
+            $table->string('status');
             $table->timestamps();
         });
     }
