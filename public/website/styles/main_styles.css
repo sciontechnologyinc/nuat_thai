@@ -1926,6 +1926,10 @@
         text-align: center;
         padding: 20px;
     }
+    
+    .card.services {
+        background: rgb(20, 19, 27, 0.5);
+    }
     /* Slider */
     
     .slick-slide {

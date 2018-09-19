@@ -11,15 +11,17 @@
   <div class="card services">
     <div class="card-header services" id="headingOne">
       <h5 class="mb-0">
-        <button class="btn btn-link services" type="button" data-toggle="collapse" data-target="#{{$package->id}}" aria-expanded="true" aria-controls="{{$package->id}}">
-        {{ $package->packagecode }}
+        <button class="btn btn-link services" type="button" data-toggle="collapse" data-target="#{{$package->id}}" aria-controls="{{$package->id}}">
+        {{ $package->packagecode }} 
+        
         </button>
       </h5>
     </div>
 
-    <div id="{{$package->id }}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="{{$package->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body services">
       {{ $package->packagedescription }}
+      <div class="service-price">Php. {{ $package->price }}</div>
       </div>
     </div>
   </div>
