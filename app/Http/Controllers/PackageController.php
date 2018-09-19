@@ -20,6 +20,14 @@ class PackageController extends Controller
     {
         $packages = Packages::orderBy('id')->get();
         return view('packages.packages', ['packages' => $packages]);
+        
+    }
+
+    public function services()
+    {
+        $packages = Packages::orderBy('id')->get();
+        return view('website.pages.services', ['packages' => $packages]);
+        
     }
 
 

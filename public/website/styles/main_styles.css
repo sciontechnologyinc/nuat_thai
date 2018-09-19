@@ -1634,6 +1634,7 @@
         background-position: center;
         padding-top: 20px;
         padding-bottom: 48px;
+        background-attachment: fixed;
     }
     
     h3.loc {
@@ -1895,4 +1896,12 @@
     
     .padding {
         padding: 20px;
+    }
+    
+    .services-title {
+        background: rgba(255, 255, 255, 0.8);
+        color: #080f74;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 15px;
     }
