@@ -23,6 +23,14 @@ Route::get('nuatthaihome', function () {
     return view('website.pages.home');
 });
 
+Route::get('nuatthaivirtualtour', function () {
+    return view('website.pages.virtualtour');
+});
+
+Route::get('nuatthaiservices', function () {
+    return view('website.pages.services');
+});
+
 Route::resource('bookmassagesave','BookmassageController');
 Route::get('bookmassage', function () {
     return View::make('website.pages.bookmassage');
