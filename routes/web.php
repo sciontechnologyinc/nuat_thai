@@ -23,6 +23,12 @@ Route::get('nuatthaihome', function () {
     return view('website.pages.home');
 });
 
+Route::get('nuatthaivirtualtour', function () {
+    return view('website.pages.virtualtour');
+});
+
+
+
 Route::resource('bookmassagesave','BookmassageController');
 Route::get('bookmassage', function () {
     return View::make('website.pages.bookmassage');
@@ -120,6 +126,7 @@ Route::get('bookmassages','BookmassageController@index');
 Route::post('bookmassages/update','BookmassageController@update');
 Route::get('bookmassages/create','PackageController@packagesdropdown');
 Route::get('website/pages/reservation','BookmassageController@reservation');
+Route::get('website/pages/services','PackageController@services');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

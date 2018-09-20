@@ -3,6 +3,7 @@ let modalId = $('#image-gallery');
 $(document)
     .ready(function() {
 
+
         loadGallery(true, 'a.thumbnail');
 
         //This function disables buttons when needed
@@ -65,6 +66,27 @@ $(document)
                     updateGallery($(this));
                 });
         }
+
+        $('.customer-logos').slick({
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
+        });
     });
 
 // build key actions
@@ -89,4 +111,6 @@ $(document)
                 return; // exit this handler for other keys
         }
         e.preventDefault(); // prevent the default action (scroll / move caret)
+
+
     });
