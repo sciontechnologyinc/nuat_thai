@@ -22,7 +22,7 @@
 									<li><a href="{{ url('website/pages/reservation') }}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>reservation</span></div></a></li>
 								</ul>
 							</nav>
-							<a data-toggle="modal" data-target="#myModal" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Massage</span></div></a>
+							<a data-toggle="modal" data-target="#myModal" id="bookmassagebtn" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Massage</span></div></a>
 							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 						</div>
 					</div>
@@ -40,7 +40,9 @@
                     <li><a href="{{ url('nuatthaivirtualtour') }}">Virtual Tour</a></li>
                     <li><a href="{{ url('website/pages/services') }}">Services</a></li>
                     <li><a href="{{ url('website/pages/reservation') }}">Reservation</a></li>
+                    <li><a data-toggle="modal" data-target="#myModal">Book Massage</a></li>
                 </ul>
+               
             </div>
         </div>
 
@@ -60,11 +62,25 @@
 
 
 
+
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
+  @if ($user = Auth::user())
     <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Please proceed to book massage reservation</p>
+      </div>
+      <div class="modal-footer">
+	  	<a href="/bookmassages/create"><button type="button" class="btn btn-success">Proceed</button></a>
+	    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+    @else
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -77,6 +93,7 @@
 		<a href="{{ route('register') }}"><button type="button" class="btn btn-default">Register</button></a>
       </div>
     </div>
-
+    @endif
   </div>
 </div>
+
