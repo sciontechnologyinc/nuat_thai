@@ -35,10 +35,11 @@
             <div class="background_image" style="background-image:url(images/menu.jpg)"></div>
             <div class="menu_content d-flex flex-column align-items-center justify-content-center">
                 <ul class="menu_nav_list text-center">
-                    <li><a href="nuatthaihome">Home</a></li>
-                    <li><a href="nuatthaiaboutus">About us</a></li>
-                    <li><a href="rooms.html">Virtual Tour</a></li>
-                    <li><a href="nuatthaireservation">Reservation</a></li>
+                    <li><a href="{{ url('nuatthaihome') }}">Home</a></li>
+                    <li><a href="{{ url('nuatthaiaboutus') }}">About us</a></li>
+                    <li><a href="{{ url('nuatthaivirtualtour') }}">Virtual Tour</a></li>
+                    <li><a href="{{ url('website/pages/services') }}">Services</a></li>
+                    <li><a href="{{ url('website/pages/reservation') }}">Reservation</a></li>
                 </ul>
             </div>
         </div>
