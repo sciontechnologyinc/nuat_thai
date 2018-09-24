@@ -2042,3 +2042,9 @@
     .slick-arrow.slick-hidden {
         display: none;
     }
+    
+    .btn-success {
+        color: #fff;
+        background-color: #04083a;
+        border-color: #04083a;
+    }

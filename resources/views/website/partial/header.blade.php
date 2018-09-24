@@ -22,7 +22,7 @@
 									<li><a href="{{ url('website/pages/reservation') }}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>reservation</span></div></a></li>
 								</ul>
 							</nav>
-							<a href="{{ url('bookmassages/create') }}" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Massage</span></div></a>
+							<a data-toggle="modal" data-target="#myModal" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Massage</span></div></a>
 							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 						</div>
 					</div>
@@ -43,3 +43,40 @@
                 </ul>
             </div>
         </div>
+
+		
+<style>
+    .btn-success {
+        color: #fff;
+        background-color: #04083a;
+        border-color: #04083a;
+	}
+	.btn-success:hover {
+    color: #fff500;
+    background-color: #04083a;
+    border-color: #04083a;
+}
+</style>
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Please register or login to continue</p>
+      </div>
+      <div class="modal-footer">
+	  	<a href="{{ route('login') }}"><button type="button" class="btn btn-success">Log In</button></a>
+		<a href="{{ route('register') }}"><button type="button" class="btn btn-default">Register</button></a>
+      </div>
+    </div>
+
+  </div>
+</div>
