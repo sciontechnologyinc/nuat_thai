@@ -21208,3 +21208,33 @@
         background-color: white;
         border-color: white;
     }
+    
+    .modal-header {
+        display: block !important;
+    }
+    
+    a.dropdown-item {
+        cursor: pointer;
+    }
+    
+    .btn-success:not(:disabled):not(.disabled):active,
+    .btn-success:not(:disabled):not(.disabled).active,
+    .show>.btn-success.dropdown-toggle {
+        color: #fff;
+        background-color: #de9f00;
+        border-color: #de9f00;
+    }
+
+    .fc-time-grid-event.fc-v-event.fc-event.fc-start.fc-end.Pending {
+        background-color: orange;
+    }
+
+    .fc-time-grid-event.fc-v-event.fc-event.fc-start.fc-end.Cancelled {
+        background-color: red;
+    }
+
+    .fc-time-grid-event.fc-v-event.fc-event.fc-start.fc-end.Paid {
+        background-color: green;
+    }
+    
+    

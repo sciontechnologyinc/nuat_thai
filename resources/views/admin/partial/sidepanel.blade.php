@@ -1,24 +1,5 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item nav-profile">
-            <div class="nav-link">
-              <div class="user-wrapper">
-                <div class="profile-image">
-                  <img src="images/faces/face1.jpg" alt="profile image">
-                </div>
-                <div class="text-wrapper">
-                  <p class="profile-name">Richard V.Welsh</p>
-                  <div>
-                    <small class="designation text-muted">Manager</small>
-                    <span class="status-indicator online"></span>
-                  </div>
-                </div>
-              </div>
-              <button class="btn btn-success btn-block">Book Massage
-                <i class="mdi mdi-plus"></i>
-              </button>
-            </div>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <i class="menu-icon mdi mdi-television"></i>
@@ -37,16 +18,16 @@
                   <a class="nav-link" href="accounts">Accounts</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="massagereservations">Massage Reservation</a>
+                  <a class="nav-link" href="{{ url('bookmassages') }}">Massage Reservation</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="cabins">Cabins</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="therapists">Therapists</a>
+                  <a class="nav-link" href="staffs">Staffs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="massagetype">Massage Types</a>
+                  <a class="nav-link" href="massagetypes">Massage Types</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="packages">Packages</a>
@@ -63,22 +44,22 @@
             <div class="collapse" id="maintenance">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/buttons.html">Branches</a>
+                  <a class="nav-link" href="branches">Branches</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                  <a class="nav-link" href="">What's New</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="companyinformation">
               <i class="menu-icon mdi mdi-information-outline"></i>
               <span class="menu-title">Company Information</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/icons/font-awesome.html">
+            <a class="nav-link" href="">
               <i class="menu-icon mdi mdi-account-box-outline"></i>
               <span class="menu-title">Admin Settings</span>
             </a>

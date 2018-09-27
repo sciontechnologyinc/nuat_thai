@@ -1,11 +1,15 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Bookmassage;
 use Carbon\Carbon;
-use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 use function Psy\debug;
+use App\Packages;
+use Calendar;
 
 class BookmassageController extends Controller
 {
@@ -16,7 +20,87 @@ class BookmassageController extends Controller
      */
     public function index()
     {
-       
+        $events = Packages::join('bookmassages', 'bookmassages.package', '=', 'packages.packagecode')
+            ->get();
+        $event_list = [];
+        foreach($events as $key => $event) {
+            $event_list[] = Calendar::event(
+                $event->fullname,
+                false,
+                new \DateTime($event->datetime),
+                new \DateTime($event->datetime.' +1 hour'),
+                $event->id,
+                [
+                    'bid'=>$event->id,
+                    'package'=> $event->packagecode,
+                    'status'=> $event->status,
+                    'noofreservation'=> $event->noofreservation,
+                    'contactno' => $event->contactno,
+                    'description' => $event->packagedescription,
+                    'price' => $event->price,
+                ]
+            );
+        }
+        $bookmassages = Calendar::addEvents($event_list);
+        $bookmassages->setOptions([
+            "defaultView" => 'agendaWeek',
+            "allDaySlot" => false,
+            "nowIndicator" => true,
+            "selectable" => true,
+            "height"=> "auto",
+            "minTime" =>  "10:00:00",
+            "hiddenDays"=> [ 6, 0 ],
+            "maxTime" => "18:00:00",
+            "header"=> [
+                "left"=> 'prev,next',
+                "center"=> 'title',
+                "right"=> ''
+            ],
+            "businessHours" => [
+                "dow" => [ 1, 2, 3, 4, 5],
+                "start" => '10:00',
+                "end" => '18:00',
+            ]
+        ])
+        ->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
+            "eventRender" => "function(event, element) {
+                $(element).addClass(event.status);
+                $(element).popover({
+                    placement : 'top',
+                    html : true,
+                    trigger : 'hover',
+                    title : event.package,
+                    content : '<span><b>Description: </b>' + event.description + '</span><br />' + '<span><b>Price: </b>' + event.price + '</span><br />' + '<span><b>Status: </b>' + event.status + '</span>'
+                });
+             }",
+             "eventClick" => "function(event) {
+                $('#editreserve').modal('show');
+                console.log(event);
+                $('[name=id]').val(event.bid);
+                $('[name=fullname]').val(event.title);
+                $('[name=contactno]').val(event.contactno);
+                $('[name=resvdate]').val(event.start.format('YYYY-MM-DD'));
+                $('[name=resvtime]').val(event.start.format('HH:mm:ss'));
+                $('[name=package]').val(event.package);
+                $('[name=noofreservation]').val(event.noofreservation);
+                $('[name=status]').val(event.status);
+            }",
+            "dayClick" => "function(date, jsEvent, view) {
+                $('#reserve').modal('show'); 
+                $('[name=resvdate]').val(date.format('YYYY-MM-DD'));
+                $('[name=resvtime]').val(date.format('HH:mm:ss'));
+            }"
+        ]);
+        $packages = Packages::orderBy('id')->get();
+        return view('bookmassages.index', ['bookmassages' => $bookmassages, 'packages' => $packages]);
+    }
+
+    public function reservation()
+    {
+        $packages = Bookmassage::where('fullname', '=', Auth::user()->name)
+            ->join('packages', 'packages.packagecode', '=', 'bookmassages.package')
+            ->get();
+        return view('website.pages.reservation', ['packages' => $packages]);
     }
 
     /**
@@ -26,7 +110,7 @@ class BookmassageController extends Controller
      */
     public function create()
     {
-        return view('website.pages.bookmassage');
+        return view('bookmassages.create');
     }
 
     /**
@@ -37,17 +121,16 @@ class BookmassageController extends Controller
      */
     public function store(Request $request)
     {
-        $bookmassage = $request->all();
-         $data = $request->validate([
-            'fullname' => 'required',
-            'contactno' => 'required',
-            'noofreservation' => 'required',
-            'datetime' => 'required',
-            'package' => 'required',
-            
-        ]);
-        Bookmassage::create($data);
-
+        $date = date_format(date_create($request->resvdate),"Y-m-d");
+        $time = date_format(date_create($request->resvtime),"H:i:s");
+        $bkms = new Bookmassage();
+        $bkms->fullname = $request->fullname;
+        $bkms->contactno =  $request->contactno;
+        $bkms->noofreservation =  $request->noofreservation;
+        $bkms->package =  $request->package;
+        $bkms->datetime = $date.' '.$time;
+        $bkms->status = "Pending";
+        $bkms->save();
         return redirect()->back()->with('success','Added successfuly');
     }
 
@@ -80,9 +163,19 @@ class BookmassageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $bkms = Bookmassage::find($request->id);
+        $date = date_format(date_create($request->resvdate),"Y-m-d");
+        $time = date_format(date_create($request->resvtime),"H:i:s");
+        $bkms->fullname = $request->fullname;
+        $bkms->contactno =  $request->contactno;
+        $bkms->noofreservation =  $request->noofreservation;
+        $bkms->package =  $request->package;
+        $bkms->datetime = $date.' '.$time;
+        $bkms->status = $request->status;
+        $bkms->save();
+        return redirect('/bookmassages')->with('success','Updated successfuly');
     }
 
     /**

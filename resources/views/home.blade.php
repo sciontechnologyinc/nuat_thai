@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="css/auth.css">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Nuat Thai</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +15,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Welcome to Nuat Thai!
                 </div>
             </div>
         </div>

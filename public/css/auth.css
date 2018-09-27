@@ -34,6 +34,12 @@ input#email {
     outline: none;
 }
 
+input#contacno {
+    background-color: #777;
+    color: white;
+    outline: none;
+}
+
 input#password {
     background-color: #777;
     color: white;

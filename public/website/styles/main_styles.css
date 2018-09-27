@@ -278,7 +278,7 @@
     .button {
         width: 181px;
         height: 50px;
-        background: #241364;
+        background: #080f74;
         -webkit-transition: all 200ms ease;
         -moz-transition: all 200ms ease;
         -ms-transition: all 200ms ease;
@@ -348,7 +348,7 @@
         left: 0;
         width: 265px;
         height: 100%;
-        background: #241364 !important;
+        background: #080f74 !important;
         z-index: 1;
     }
     
@@ -432,7 +432,7 @@
     
     .main_nav ul li.active,
     .main_nav ul li:hover {
-        background: #241364;
+        background: #080f74;
     }
     
     .main_nav ul li a {
@@ -1593,7 +1593,7 @@
     .aboutmain {
         margin-top: 1px;
         /* background-color: rgba(255,255,255,0.1); */
-        color: #241364 !important;
+        color: #080f74 !important;
         margin: 51px;
         padding-bottom: 27px;
         background: rgba(255, 255, 255, 0.2);
@@ -1619,7 +1619,7 @@
     
     h3.mvs {
         margin: auto;
-        width: 273px;
+        width: 276px;
         text-align: center;
         border-bottom: 1.5px solid;
         color: #f1e8e8;
@@ -1634,6 +1634,7 @@
         background-position: center;
         padding-top: 20px;
         padding-bottom: 48px;
+        background-attachment: fixed;
     }
     
     h3.loc {
@@ -1855,7 +1856,7 @@
     .aboutmain {
         margin-top: 12px;
         /* background-color: rgba(255,255,255,0.1); */
-        color: #241364 !important;
+        color: #080f74 !important;
     }
     
     .hamburger i:hover {
@@ -1874,17 +1875,176 @@
         margin: auto;
     }
     
+    .bookingsummary-title {
+        font-size: 40px;
+        padding: 123px 0px 40px;
+        width: 350px;
+        text-align: center;
+        margin: auto;
+    }
+    
     button.btn.btn-success.mr-2.bookmassage {
-        background: #241364 !important;
-        border-color: #241364 !important;
+        background: #080f74 !important;
+        border-color: #080f74 !important;
     }
     
     button.btn.btn-success.mr-2.bookmassage:hover {
         background: #081123 !important;
-        border-color: #241364 !important;
+        border-color: #080f74!important;
         color: white;
     }
     
     .padding {
         padding: 20px;
+    }
+    
+    .services-title {
+        background: rgb(8, 17, 35, 0.65);
+        color: #f9f9f9;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 15px;
+    }
+    
+    .card.services {
+        background: none;
+    }
+    
+    div#headingOne {
+        border-color: white;
+    }
+    
+    button.btn.btn-link.services {
+        color: white;
+    }
+    
+    .card-body.services {
+        color: #c1c1c1;
+    }
+    
+    h2 {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .card.services {
+        background: rgb(20, 19, 27, 0.5);
+    }
+    /* Slider */
+    
+    .slick-slide {
+        margin: 0px 20px;
+    }
+    
+    .slick-slide img {
+        width: 100%;
+    }
+    
+    .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .slick-list {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .slick-list:focus {
+        outline: none;
+    }
+    
+    .slick-list.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+    
+    .slick-slider .slick-track,
+    .slick-slider .slick-list {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .slick-track {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+    
+    .slick-track:before,
+    .slick-track:after {
+        display: table;
+        content: '';
+    }
+    
+    .slick-track:after {
+        clear: both;
+    }
+    
+    .slick-loading .slick-track {
+        visibility: hidden;
+    }
+    
+    .slick-slide {
+        display: none;
+        float: left;
+        height: 100%;
+        min-height: 1px;
+    }
+    
+    [dir='rtl'] .slick-slide {
+        float: right;
+    }
+    
+    .slick-slide img {
+        display: block;
+    }
+    
+    .slick-slide.slick-loading img {
+        display: none;
+    }
+    
+    .slick-slide.dragging img {
+        pointer-events: none;
+    }
+    
+    .slick-initialized .slick-slide {
+        display: block;
+    }
+    
+    .slick-loading .slick-slide {
+        visibility: hidden;
+    }
+    
+    .slick-vertical .slick-slide {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+    
+    .slick-arrow.slick-hidden {
+        display: none;
+    }
+    
+    .btn-success {
+        color: #fff;
+        background-color: #04083a;
+        border-color: #04083a;
     }
