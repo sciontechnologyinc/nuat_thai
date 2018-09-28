@@ -119,6 +119,9 @@ Route::get('nuatthaireservation', function () {
 Route::get('bookingsummary', function () {
     return view('website.pages.bookingsummary');
 });
+Route::get('profile', function () {
+    return view('website.pages.profile');
+});
 
 
 Auth::routes();
@@ -127,6 +130,7 @@ Route::post('bookmassages/update','BookmassageController@update');
 Route::get('bookmassages/create','PackageController@packagesdropdown');
 Route::get('website/pages/reservation','BookmassageController@reservation');
 Route::get('website/pages/services','PackageController@services');
+Route::get('website/pages/profile','ProfileController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

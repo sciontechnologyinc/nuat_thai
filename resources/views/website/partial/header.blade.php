@@ -21,7 +21,7 @@
 									<li><a href="{{ url('nuatthaivirtualtour')}}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>virtual tour</span></div></a></li>
 									<li><a href="{{ url('website/pages/services')}}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>Services</span></div></a></li>
 									<li><a href="{{ url('website/pages/reservation') }}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>reservation</span></div></a></li>
-
+									<li><a href="{{ url('website/pages/profile') }}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>Profile</span></div></a></li>
 								</ul>
 							</nav>
               
@@ -59,7 +59,6 @@
 			</div>
 		</div>
     </header>
-    
     <div class="menu">
             <div class="background_image" style="background-image:url(images/menu.jpg)"></div>
             <div class="menu_content d-flex flex-column align-items-center justify-content-center">
@@ -70,8 +69,11 @@
                     <li><a href="{{ url('website/pages/services') }}">Services</a></li>
                     <li><a href="{{ url('website/pages/reservation') }}">Reservation</a></li>
                     <li><a data-toggle="modal" data-target="#myModal">Book Massage</a></li>
+                    
+                    <li><a class="Profile">Profile</a></li>
                 </ul>
             </div>
+            
     </div>
 
 		
@@ -87,9 +89,6 @@
     border-color: #04083a;
 }
 </style>
-
-
-
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
