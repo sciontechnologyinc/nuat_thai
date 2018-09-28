@@ -12,15 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('website.pages.home');
+    return view('home.index');
 });
 
 Route::get('dashboard', function () {
-    return view('admin.pages.home');
+    return view('dashboard.index');
 });
 
+Route::resource('dashboard','DashboardController');
+
+
 Route::get('nuatthaihome', function () {
-    return view('website.pages.home');
+    return view('home.index');
 });
 
 Route::get('nuatthaivirtualtour', function () {
@@ -134,3 +137,19 @@ Route::get('website/pages/profile','ProfileController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::post('/home', [
+    'uses' => 'LoginController@login',
+    'as'   => 'home.index'
+]);
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('home.index', function(){
+          return view('home.index');
+    })->name('home');
+
+    Route::get('dashboard.index', function(){
+        return view('dashboard.index');
+    })->name('dashboard');
+
+});
