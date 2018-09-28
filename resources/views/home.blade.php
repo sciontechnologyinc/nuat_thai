@@ -14,7 +14,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     Welcome to Nuat Thai!
                 </div>
             </div>

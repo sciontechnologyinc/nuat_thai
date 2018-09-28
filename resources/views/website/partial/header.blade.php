@@ -71,9 +71,8 @@
                     <li><a href="{{ url('website/pages/reservation') }}">Reservation</a></li>
                     <li><a data-toggle="modal" data-target="#myModal">Book Massage</a></li>
                 </ul>
-               
             </div>
-        </div>
+    </div>
 
 		
 <style>
