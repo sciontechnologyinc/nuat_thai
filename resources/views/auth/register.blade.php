@@ -45,7 +45,7 @@
                             <label for="contacno" class="col-md-4 col-form-label text-md-right">{{ __('Local Contact No:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="contacno" type="text" class="form-control{{ $errors->has('contacno') ? ' is-invalid' : '' }}" name="contacno" value="{{ old('contacno') }}" required>
+                                <input id="contacno" type="number" class="form-control{{ $errors->has('contacno') ? ' is-invalid' : '' }}" name="contacno" value="{{ old('contacno') }}" required>
 
                                 @if ($errors->has('contacno'))
                                     <span class="invalid-feedback" role="alert">
