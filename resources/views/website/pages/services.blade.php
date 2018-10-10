@@ -46,18 +46,6 @@ body {
     padding: .5rem;
     line-height: 1.6em;
 }
-.button {
-    display: block;
-    background-color: tomato;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    transition: .3s ease-out;
-    &:hover {
-        background-color: darken(tomato, 10%);
-    }
-}
 main.card__description {
     text-align: center;
 }
