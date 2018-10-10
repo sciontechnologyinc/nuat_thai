@@ -4,7 +4,7 @@
 			<!-- Logo -->
 			<div class="logo_container d-flex flex-column align-items-center justify-content-center">
 				<div class="logo">
-					<a href="#" class="text-center">
+					<a href="{{url('nuatthaihome')}}" class="text-center">
 						<div class="logo_title"><img src="/images/website-logo.png" alt=""></div>
 					</a>
 				</div>
@@ -68,9 +68,8 @@
                     <li><a href="{{ url('nuatthaivirtualtour') }}">Virtual Tour</a></li>
                     <li><a href="{{ url('website/pages/services') }}">Services</a></li>
                     <li><a href="{{ url('website/pages/reservation') }}">Reservation</a></li>
-                    <li><a data-toggle="modal" data-target="#myModal">Book Massage</a></li>
-                    
-                    <li><a class="Profile">Profile</a></li>
+                    <li><a href="{{ url('website/pages/profile') }}">Profile</a></li>
+                    <li><a class="bookmassage-btn"data-toggle="modal" data-target="#myModal">Book Massage</a></li>
                 </ul>
             </div>
             
@@ -87,6 +86,10 @@
     color: #fff500;
     background-color: #04083a;
     border-color: #04083a;
+}
+
+a.bookmassage-btn {
+    color: white !important;
 }
 </style>
 
