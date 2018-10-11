@@ -15,6 +15,7 @@ class ProfileController extends Controller
     {
         // $user = User::orderBy('id')->get();
         return view('website.pages.profile');
+        
     }
 
     /**
