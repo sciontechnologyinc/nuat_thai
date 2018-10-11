@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+Nexmo::message()->send([
+    'to' => '639129935204',
+    'from' => 'Nuat Thai',
+    'text' => ' Reservation Complete'
+]);
+
 Route::get('dashboard', function () {
     return view('dashboard.index');
 });
