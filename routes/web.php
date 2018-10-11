@@ -119,6 +119,7 @@ Route::get('nuatthaireservation', function () {
     return view('website.pages.reservation');
 });
 
+
 Route::get('bookingsummary', function () {
     return view('website.pages.bookingsummary');
 });
@@ -153,3 +154,7 @@ Route::group(['middleware' => 'auth'], function(){
     })->name('dashboard');
 
 });
+
+
+Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);

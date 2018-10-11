@@ -2048,3 +2048,21 @@
         background-color: #04083a;
         border-color: #04083a;
     }
+    
+    button.btn-success.ps-btn {
+        padding: 8px;
+        margin: 10px;
+    }
+    
+    button.btn-warning.ps-btn {
+        padding: 8px;
+        margin: 10px;
+        cursor: pointer;
+        background: #05083a;
+        color: white;
+        border-color: #05083a;
+    }
+    
+    button.btn-warning.ps-btn:hover {
+        color: #fdf501;
+    }

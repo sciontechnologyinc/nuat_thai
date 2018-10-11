@@ -29,6 +29,7 @@
                     <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="{{ url('website/pages/profile') }}"><i class="fa fa-user"></i> Reservations</a>
                         <a class="nav-link" href="{{ url('changepassword') }}"><i class="fa fa-cog"></i> Settings</a>
+                        <a class="nav-link" href="{{ route('users.edit',$user) }}"><i class="fa fa-cog"></i> Settings</a>
                             <a class="nav-link" href="{{ url('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
@@ -69,7 +70,30 @@
                     <li><a href="{{ url('nuatthaivirtualtour') }}">Virtual Tour</a></li>
                     <li><a href="{{ url('website/pages/services') }}">Services</a></li>
                     <li><a href="{{ url('website/pages/reservation') }}">Reservation</a></li>
-                    <li><a href="{{ url('website/pages/profile') }}">Profile</a></li>
+                    <li><div class="nav_item d-flex flex-column align-items-center justify-content-center">
+                        <a class="nav-link dropdown profile" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="margin-top: 20px;">
+                         Profile
+                        </a>
+                        @if ($user = Auth::user())
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link profilebtn" href="{{ url('website/pages/profile') }}"><i class="fa fa-user"></i> Reservations</a>
+                            <a class="nav-link profilebtn" href="{{ route('users.edit',$user) }}"><i class="fa fa-cog"></i> Settings</a>
+                                <a class="nav-link profilebtn" href="{{ url('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                                 <i class="fa fa-sign-out"></i> {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                    </div>
+                        @else
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link profilebtn" href="{{ url('login') }}"><i class="fa fa-user"></i> Login</a>
+                        @endif
+                       
+          
+                </div>   </li>
                     <li><a class="bookmassage-btn"data-toggle="modal" data-target="#myModal">Book Massage</a></li>
                 </ul>
             </div>
@@ -98,6 +122,11 @@ a.bookmassage-btn {
 
 li.profile-hov:hover {
     background: none !important;
+}
+
+a.nav-link.profilebtn {
+    font-size: 30px;
+    color: #0b1422;
 }
 
 link.dropdown.profile:hover {
