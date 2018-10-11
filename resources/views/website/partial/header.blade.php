@@ -28,7 +28,6 @@
                     @if ($user = Auth::user())
                     <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="{{ url('website/pages/profile') }}"><i class="fa fa-user"></i> Reservations</a>
-                        <a class="nav-link" href="{{ url('changepassword') }}"><i class="fa fa-cog"></i> Settings</a>
                         <a class="nav-link" href="{{ route('users.edit',$user) }}"><i class="fa fa-cog"></i> Settings</a>
                             <a class="nav-link" href="{{ url('logout') }}"
                                onclick="event.preventDefault();
