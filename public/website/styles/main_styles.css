@@ -2066,3 +2066,7 @@
     button.btn-warning.ps-btn:hover {
         color: #fdf501;
     }
+    
+    .card.ps {
+        padding: 20px 5px;
+    }

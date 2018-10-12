@@ -22,7 +22,7 @@
  {!! Form::open(['id' => 'dataForm', 'method' => 'PATCH', 'url' => 'users.edit' . $user->user ]) !!}
  <div class="container reservation-page">
         <div class="reservation-title mx-0 px-0">Account Settings</div>
-    <div class="card">
+    <div class="card ps">
         <div class="form-group col-lg-12">
                 {!!Form::label('name', 'Full Name', array('class' => 'form-control-label'))!!}
                 {!!Form::text('name',$user->name, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
@@ -40,7 +40,6 @@
                 {!!Form::text('password_confirmation','', ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
         </div>
         {!!Form::submit('Submit', ['id' => 'addForm','class' => 'btn btn-success mr-2']) !!}
-        <button type="submit">Send</button>
         <button class="btn btn-light">Cancel</button>
     </div>
 </div>
