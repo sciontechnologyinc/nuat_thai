@@ -2070,3 +2070,17 @@
     .card.ps {
         padding: 20px 5px;
     }
+    
+    input#addForm {
+        margin-right: 0px !important;
+    }
+    
+    .services-img {
+        width: 200px !important;
+        text-align: center;
+        margin: auto;
+    }
+    
+    .services-img img {
+        width: 100%;
+    }
