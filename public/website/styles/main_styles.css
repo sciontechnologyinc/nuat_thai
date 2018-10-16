@@ -2073,4 +2073,17 @@
     
     input#addForm {
         margin-right: 0px !important;
+<<<<<<< HEAD
+=======
+    }
+    
+    .services-img {
+        width: 200px !important;
+        text-align: center;
+        margin: auto;
+    }
+    
+    .services-img img {
+        width: 100%;
+>>>>>>> f631b8a3d7d7c684a83d3848276be7ae994945dd
     }

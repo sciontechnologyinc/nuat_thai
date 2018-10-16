@@ -25,8 +25,10 @@ class LoginController extends Controller
             {
                 return redirect()->route('dashboard.index');
             }
-
+            else {
                 return redirect()->route('home.index');
+            }
+
         }
 
             

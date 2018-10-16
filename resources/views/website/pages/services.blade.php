@@ -69,6 +69,7 @@ header.card__title {
             <h3>{{ $package->packagecode }} </h3>
         </header>
         <main class="card__description">
+           <div class="services-img"><img src="/images/slider5.jpg" alt=""></div>
             {{ $package->packagedescription }}
         </main>
         <div class="service-price">Php. {{ $package->price }}</div>

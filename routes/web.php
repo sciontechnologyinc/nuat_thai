@@ -20,6 +20,10 @@ Route::get('dashboard', function () {
     return view('dashboard.index');
 });
 
+Route::get('nt_admin', function () {
+    return view('auth.adminlogin');
+});
+
 Route::resource('dashboard','DashboardController');
 
 
