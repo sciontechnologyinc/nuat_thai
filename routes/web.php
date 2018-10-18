@@ -52,10 +52,11 @@ Route::get('bookmassage', function () {
 Route::get('accounts', function () {
     return view('accounts.account');
 });
+Route::resource('accounts','AccountController');
 
 
-Route::get('addaccount', function () {
-    return view('accounts.addaccount');
+Route::get('edit', function () {
+    return view('accounts.editaccount');
 });
 Route::resource('massagereservations','BookmassageController');
 
