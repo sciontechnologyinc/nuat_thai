@@ -32,7 +32,7 @@
                             <a class="nav-link" href="{{ url('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                             <i class="fa fa-sign-out"></i> {{ __('Logout') }}
+                                             <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
