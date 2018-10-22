@@ -107,6 +107,13 @@ class BookmassageController extends Controller
 
     }
 
+    public function allreservation()
+    {
+        $allpackages = Bookmassage::orderBy('id')->get();
+      return view('website.pages.reservation', ['packages' => $allpackages]);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

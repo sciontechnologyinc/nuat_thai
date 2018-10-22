@@ -20,14 +20,14 @@
 									<li><a href="{{ url('nuatthaiaboutus')}}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>about us</span></div></a></li>
 									<li><a href="{{ url('nuatthaivirtualtour')}}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>virtual tour</span></div></a></li>
 									<li><a href="{{ url('website/pages/services')}}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>Services</span></div></a></li>
-									<li><a href="{{ url('website/pages/reservation') }}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>reservation</span></div></a></li>
+									<li><a href="{{ url('website/pages/allreservation') }}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>reservation</span></div></a></li>
 									<li class="profile-hov"> <div class="nav_item d-flex flex-column align-items-center justify-content-center">
                     <a class="nav-link dropdown profile" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="margin-top: 20px;">
                      <i class="fa fa-user"></i>
                     </a>
                     @if ($user = Auth::user())
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="{{ url('website/pages/profile') }}"><i class="fa fa-user"></i> Reservations</a>
+                        <a class="nav-link" href="{{ url('website/pages/reservation') }}"><i class="fa fa-user"></i> Reservations</a>
                         <a class="nav-link" href="{{ route('users.edit',$user) }}"><i class="fa fa-cog"></i> Settings</a>
                             <a class="nav-link" href="{{ url('logout') }}"
                                onclick="event.preventDefault();

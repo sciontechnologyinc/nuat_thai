@@ -139,6 +139,7 @@ Route::get('bookmassages','BookmassageController@index');
 Route::post('bookmassages/update','BookmassageController@update');
 Route::get('bookmassages/create','PackageController@packagesdropdown');
 Route::get('website/pages/reservation','BookmassageController@reservation');
+Route::get('website/pages/allreservation','BookmassageController@allreservation');
 Route::get('website/pages/services','PackageController@services');
 Route::get('website/pages/profile','ProfileController@index');
 
