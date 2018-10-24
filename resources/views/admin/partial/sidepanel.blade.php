@@ -32,6 +32,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="packages">Packages</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="promotions">Promo</a>
+                </li>
               </ul>
             </div>
           </li>

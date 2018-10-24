@@ -116,6 +116,11 @@ Route::get('addpackage', function () {
     return view('packages.addpackage');
 });
 
+Route::get('addpromo', function () {
+    return view('promotions.addpromo');
+});
+Route::resource('promotions', 'PromotionController');
+
 
 Route::get('nuatthaiaboutus', function () {
     return view('website.pages.aboutus');
