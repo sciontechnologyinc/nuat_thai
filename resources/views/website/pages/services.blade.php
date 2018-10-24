@@ -53,6 +53,9 @@ header.card__title {
     text-align: center;
     color: #080e74;
 }
+article.card {
+    cursor: pointer;
+}
 </style>
 
 <header class= "aboutheader">
@@ -62,23 +65,42 @@ header.card__title {
     </div>
 </div>   
 
-<section class="card-container">
+<section class="card-container" >
     @foreach($packages as $package)
-    <article class="card" id="{{$package->id }}">
+    <article class="card" data-toggle="modal" data-target="#{{$package->id }}">
         <header class="card__title">
             <h3>{{ $package->packagecode }} </h3>
         </header>
         <main class="card__description">
            <div class="services-img"><img src="/images/slider5.jpg" alt=""></div>
-            {{ $package->packagedescription }}
         </main>
-        <div class="service-price">Php. {{ $package->price }}</div>
+      
     </article>
     @endforeach
 
 </section>
-
-
+@foreach($packages as $package)
+<div class="modal fade" id="{{$package->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ $package->packagecode }} </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      {{ $package->packagedescription }}<br>
+      Php. {{ $package->price }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 <div class="container services">
   <h2></h2>
@@ -97,5 +119,24 @@ header.card__title {
 <div class="padding"></div>
 </header>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 @endsection
