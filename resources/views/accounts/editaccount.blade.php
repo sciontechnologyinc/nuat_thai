@@ -5,9 +5,7 @@
                     <li class="nav-item">
                         <a href="accounts" class="nav-link">Accounts</a>
                     </li>
-                    <li class="nav-item active">
-                        <a href="#" class="nav-link">Edit Accounts</a>
-                    </li>
+                 
             </ul>
 @endsection
 

@@ -102,7 +102,6 @@ class BookmassageController extends Controller
             ->join('packages', 'packages.packagecode', '=', 'bookmassages.package')
             ->get();
 
-
       return view('website.pages.reservation', ['packages' => $packages]);
 
     }
@@ -110,7 +109,7 @@ class BookmassageController extends Controller
     public function allreservation()
     {
         $allpackages = Bookmassage::orderBy('id')->get();
-      return view('website.pages.reservation', ['packages' => $allpackages]);
+      return view('website.pages.allreservation', ['packages' => $allpackages]);
 
     }
 

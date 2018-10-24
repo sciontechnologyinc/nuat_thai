@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container reservation-page">
-    <div class="reservation-title mx-0 px-0">RESERVATIONS</div>
+    <div class="reservation-title mx-0 px-0">YOUR RESERVATIONS</div>
     <div class="table-responsive">
         <table class="table table-striped">
           <thead>
             <tr>
-              <th> Package Code</th>
+              <th>Package Code</th>
               <th>Package Description</th>
               <th>Price</th>
               <th>No. of Reservation</th>

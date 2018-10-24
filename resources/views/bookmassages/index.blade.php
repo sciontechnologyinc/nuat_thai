@@ -135,9 +135,9 @@
                                 </div>
                                 <div class="form-group">
                                 {!!Form::label('datetime', 'Date/Time', array('class' => 'form-control-label'))!!}
-                                {!!Form::date('resvdate',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'readonly' => '' ])!!}
+                                {!!Form::date('resvdate',null, ['placeholder' => '', 'class' => 'form-control col-lg-12' ])!!}
                                 <br />
-                                {!!Form::time('resvtime',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'readonly' => '' ])!!}
+                                {!!Form::time('resvtime',null, ['placeholder' => '', 'class' => 'form-control col-lg-12'])!!}
                                 </div>
                                 <div class="form-group">
                                    {!!Form::label('noofreservation', 'No of Reservation', array('class' => 'form-control-label'))!!}

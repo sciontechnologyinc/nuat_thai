@@ -49,9 +49,7 @@
 							</nav>
               
 							<a data-toggle="modal" data-target="#myModal" id="bookmassagebtn" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Massage</span></div></a>
-							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
-          
-                          
+							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>           
 </nav>
 </div>
 						</div>
@@ -144,7 +142,7 @@ link.dropdown.profile:hover {
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-        <p>Please proceed to book massage reservation</p>
+        <p>Please proceed to book a massage</p>
       </div>
       <div class="modal-footer">
 	  	<a href="/bookmassages/create"><button type="button" class="btn btn-success">Proceed</button></a>
