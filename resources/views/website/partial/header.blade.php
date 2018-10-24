@@ -22,7 +22,7 @@
 									<li><a href="{{ url('website/pages/services')}}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>Services</span></div></a></li>
 									<li><a href="{{ url('website/pages/allreservation') }}"><div class="nav_item d-flex flex-column align-items-center justify-content-center"><span>reservation</span></div></a></li>
 									<li class="profile-hov"> <div class="nav_item d-flex flex-column align-items-center justify-content-center">
-                    <a class="nav-link dropdown profile" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="margin-top: 20px;">
+                    <a class="nav-link dropdown profile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="margin-top: 20px;">
                      <i class="fa fa-user"></i>
                     </a>
                     @if ($user = Auth::user())
