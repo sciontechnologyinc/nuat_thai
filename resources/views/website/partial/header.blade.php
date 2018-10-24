@@ -30,7 +30,7 @@
               <div class="form-group1">
                     <div class="user-area dropdown float-right">
                                 <a id="navbarDropdown" class="nav-link dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="margin-top: 20px;">
-                                   <img src="" class="admin"> <i class="fa fa-caret-dowsn" style="margin-left: 55px;"></i>
+                                   <img src="" class="admin"> Hello, {{ Auth::user()->name }}!<i class="fa fa-caret-dowsn" style="margin-left: 55px;"></i>
                                 </a>
 
                         <div class="user-menu dropdown-menu">
