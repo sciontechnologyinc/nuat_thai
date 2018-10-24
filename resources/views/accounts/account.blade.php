@@ -3,8 +3,9 @@
 @section('headerButton')
           <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
                     <li class="nav-item active">
-                        <a href="#" class="nav-link">Accounts</a>
+                        <a href="#" class="nav-link">Account</a>
                     </li>
+                 
             </ul>
 @endsection
 
@@ -23,31 +24,52 @@
                             ID
                           </th>
                           <th>
-                            Full Name
+                             Name
+                          </th>
+                          <th>
+                            Email
                           </th>
                           <th>
                             Contact No.
                           </th>
                           <th>
-                            Email Address
+                            Password
+                          </th>
+                          <th>
+                            Action
                           </th>
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach($accounts as $account)
                       <tr>
                           <td>
-                           1
+                          {{ $account->id }}
                           </td>
                           <td>
-                            Juan Dela Cruz
+                          {{ $account->name }}
                           </td>
                           <td>
-                            09123468988
+                          {{ $account->email }}
                           </td>
                           <td>
-                            juandelacruz@gmail.com
+                          {{ $account->contactno }}
+                          </td>
+                          <td>
+                          {{ $account->password }}
+                          </td>
+                          <td>
+                          <center>
+                          <div class="form-group" style="display:inline-flex">
+                          <a rel="tooltip" title="Edit" class="btn btn-success btn-sm mr-1" href="accounts/{!! $account->id !!}/edit"><i class="fa fa-edit"></i></a>
+                          {!! Form::open(['id' => 'deleteForm', 'method' => 'DELETE', 'url' => '/accounts/' . $account->id]) !!}
+                          {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'rel' => 'tooltip', 'title' => 'Delete'] )  }}
+                          {!! Form::close() !!}
+                          </div>
+                          </center>
                           </td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

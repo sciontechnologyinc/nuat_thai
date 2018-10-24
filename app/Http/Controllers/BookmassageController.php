@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use function Psy\debug;
 use App\Packages;
 use Calendar;
+use Nexmo;
 
 class BookmassageController extends Controller
 {
@@ -100,7 +101,16 @@ class BookmassageController extends Controller
         $packages = Bookmassage::where('fullname', '=', Auth::user()->name)
             ->join('packages', 'packages.packagecode', '=', 'bookmassages.package')
             ->get();
-        return view('website.pages.reservation', ['packages' => $packages]);
+
+      return view('website.pages.reservation', ['packages' => $packages]);
+
+    }
+
+    public function allreservation()
+    {
+        $allpackages = Bookmassage::orderBy('id')->get();
+      return view('website.pages.allreservation', ['packages' => $allpackages]);
+
     }
 
     /**
@@ -121,6 +131,7 @@ class BookmassageController extends Controller
      */
     public function store(Request $request)
     {
+
         $date = date_format(date_create($request->resvdate),"Y-m-d");
         $time = date_format(date_create($request->resvtime),"H:i:s");
         $bkms = new Bookmassage();
@@ -165,6 +176,11 @@ class BookmassageController extends Controller
      */
     public function update(Request $request)
     {
+        Nexmo::message()->send([
+            'to' => '639129935204',
+            'from' => 'Nuat Thai',
+            'text' => ' Reservation Complete'
+        ]);
         $bkms = Bookmassage::find($request->id);
         $date = date_format(date_create($request->resvdate),"Y-m-d");
         $time = date_format(date_create($request->resvtime),"H:i:s");

@@ -2,14 +2,11 @@
 
 @section('content')
 <div class="container reservation-page">
-    <div class="reservation-title mx-0 px-0">YOUR RESERVATIONS</div>
+    <div class="reservation-title mx-0 px-0">MASSAGE RESERVATIONS</div>
     <div class="table-responsive">
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Package Code</th>
-              <th>Package Description</th>
-              <th>Price</th>
               <th>No. of Reservation</th>
               <th>Date</th>
               <th>Status</th>
@@ -19,9 +16,6 @@
           <tbody>
           @foreach($packages as $package)
             <tr>
-              <td>{{ $package->packagecode }}</td>
-              <td>{{ $package->packagedescription }}</td>
-              <td>{{ $package->price }}</td>
               <td>{{ $package->noofreservation }}</td>
               <td>{{ $package->datetime }}</td>
               <td>{{ $package->status }}</td>

@@ -2,33 +2,81 @@
 
 @section('content')
 
+<style>
+.card-container {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+}
+.card {
+    display: grid;
+}
+.card .button {
+    align-self: end;
+}
+
+.service-price {
+    text-align: center;
+    font-size: 22px;
+    color: #3f3f3f;
+}
+/* Simple Card styles for prettying */
+
+html {
+    font-size: 16px;
+    font-family: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+body {
+    background-color: #efefef;
+}
+* {
+    box-sizing: border-box;
+}
+.card {
+    box-shadow: 0px 1px 5px #555;
+    background-color: white;
+}
+.card__title {
+    font-size: 2rem;
+    padding: .5rem;
+}
+.card__description {
+    padding: .5rem;
+    line-height: 1.6em;
+}
+main.card__description {
+    text-align: center;
+}
+header.card__title {
+    text-align: center;
+    color: #080e74;
+}
+</style>
+
 <header class= "aboutheader">
  <div class="card about1">
     <div class="whitebg1">
     <div class="services-title">Services/Packages</div>
-    <div class="accordion" id="accordionExample">
-    @foreach($packages as $package)
-  <div class="card services">
-    <div class="card-header services" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link services" type="button" data-toggle="collapse" data-target="#{{$package->id}}" aria-controls="{{$package->id}}">
-        {{ $package->packagecode }} 
-        
-        </button>
-      </h5>
-    </div>
-
-    <div id="{{$package->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body services">
-      {{ $package->packagedescription }}
-      <div class="service-price">Php. {{ $package->price }}</div>
-      </div>
-    </div>
-  </div>
-  @endforeach
-</div>
     </div>
 </div>   
+
+<section class="card-container">
+    @foreach($packages as $package)
+    <article class="card" id="{{$package->id }}">
+        <header class="card__title">
+            <h3>{{ $package->packagecode }} </h3>
+        </header>
+        <main class="card__description">
+           <div class="services-img"><img src="/images/slider5.jpg" alt=""></div>
+            {{ $package->packagedescription }}
+        </main>
+        <div class="service-price">Php. {{ $package->price }}</div>
+    </article>
+    @endforeach
+
+</section>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>

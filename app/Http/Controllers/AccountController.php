@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use User;
-class ProfileController extends Controller
+use App\Http\Controllers\Controller;
+
+class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +16,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        // $user = User::orderBy('id')->get();
-        return view('website.pages.profile');
+        $accounts = User::orderBy('id')->get();
+        return view('accounts.account', ['accounts' => $accounts]);
     }
 
     /**
@@ -35,7 +38,16 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $accounts = $request->all();
+        $data = $request->validate([
+           'name' => 'required',
+           'email' => 'required',
+           'contactno' => 'required',
+           'password' => 'required'
+           
+       ]);
+       User::create($data);
+       return redirect()->back()->with('success','Added successfuly');
     }
 
     /**
@@ -57,7 +69,8 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $account = User::find($id);
+        return view('accounts.editaccount', ['account' => $account]);
     }
 
     /**
@@ -69,7 +82,12 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $account = User::find($id);
+        $data = $request->all();
+        $account->update($data);
+
+
+        return redirect('/accounts')->with('success','Updated successfuly');
     }
 
     /**
@@ -80,6 +98,10 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $accounts = User::find($id);
+	    $accounts->destroy($id);
+
+
+	    return redirect()->back()->with('success','Deleted successfuly');
     }
 }

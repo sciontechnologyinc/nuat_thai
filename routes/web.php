@@ -15,8 +15,13 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+
 Route::get('dashboard', function () {
     return view('dashboard.index');
+});
+
+Route::get('nt_admin', function () {
+    return view('auth.adminlogin');
 });
 
 Route::resource('dashboard','DashboardController');
@@ -47,10 +52,11 @@ Route::get('bookmassage', function () {
 Route::get('accounts', function () {
     return view('accounts.account');
 });
+Route::resource('accounts','AccountController');
 
 
-Route::get('addaccount', function () {
-    return view('accounts.addaccount');
+Route::get('edit', function () {
+    return view('accounts.editaccount');
 });
 Route::resource('massagereservations','BookmassageController');
 
@@ -119,6 +125,7 @@ Route::get('nuatthaireservation', function () {
     return view('website.pages.reservation');
 });
 
+
 Route::get('bookingsummary', function () {
     return view('website.pages.bookingsummary');
 });
@@ -132,6 +139,7 @@ Route::get('bookmassages','BookmassageController@index');
 Route::post('bookmassages/update','BookmassageController@update');
 Route::get('bookmassages/create','PackageController@packagesdropdown');
 Route::get('website/pages/reservation','BookmassageController@reservation');
+Route::get('website/pages/allreservation','BookmassageController@allreservation');
 Route::get('website/pages/services','PackageController@services');
 Route::get('website/pages/profile','ProfileController@index');
 
@@ -153,3 +161,7 @@ Route::group(['middleware' => 'auth'], function(){
     })->name('dashboard');
 
 });
+
+
+Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
