@@ -1,16 +1,14 @@
 @extends('admin.master.template')
-
 @section('headerButton')
-          <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-                    <li class="nav-item">
-                        <a href="packages" class="nav-link">Packages</a>
+          <ul class="navbar-nav navbar-nav-left">
+                    <li class="nav-item active">
+                    <a href="#" class="nav-link">Add Promo</a>
                     </li>
-                    <li class="nav-item  active">
-                        <a href="#" class="nav-link">Add Package</a>
+                    <li class="nav-item">
+                        <a href="products" class="nav-link">Promotions List</a>
                     </li>
             </ul>
 @endsection
-
 @section('content')
 <div class="main-panel">
 @if($message = Session::get('success'))
@@ -29,26 +27,19 @@
         </ul>
     </div>
  @endif
-{!! Form::open(['id' => 'dataForm', 'url' => '/packages', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-<div class="content-wrapper">
-<div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Add Package</h4>
-                  <form class="forms-sample">
-                    <div class="form-group">
-                    {!!Form::label('packagecode', 'Package Code', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('packagecode',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
-                    </div>
-                    <div class="form-group">
-                    {!!Form::label('packagedescription', 'Package Description', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('packagedescription',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
-                    </div>
-                    <div class="form-group">
-                    {!!Form::label('price', 'Price', array('class' => 'form-control-label'))!!}
-                    {!!Form::text('price',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
-                    </div>
-                    <div class="form-group">
+ {!! Form::open(['id' => 'dataForm', 'method' => 'PATCH', 'url' => '/promotions/' . $promotion->id, 'enctype' => 'multipart/form-data']) !!}
+    <div class="content-wrapper">
+    <div class="col-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Promo</h4>
+                      <p class="card-description">
+                        Edit a Promo
+                      </p>
+                      <form class="forms-sample">
+                        
+
+                          <div class="form-group">
                           {!!Form::label('photo', 'Photo', array('class' => 'form-control-label'))!!}
                               <div class="row">
                                 <input id="photo" name="photo" class="photo" type="file" accept="image/x-png,image/gif,image/jpeg">
@@ -58,6 +49,9 @@
                                 <p class="image_view"></p><img src="">
                               </div>
                         </div>
+                        <br>
+                        <br>
+                        <br>
                         {!!Form::submit('Submit', ['id' => 'addForm','class' => 'btn btn-success mr-2']) !!}
                         <button class="btn btn-light">Cancel</button>
                       </form>
@@ -68,8 +62,10 @@
     {!! Form::close() !!}
 </div>
 
-
 <style>
+input[type="file"] {
+    display: none;
+}
 .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
