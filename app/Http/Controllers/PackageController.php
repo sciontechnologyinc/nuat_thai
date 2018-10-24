@@ -89,15 +89,41 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
-        $packages = $request->all();
+        $package = $request->all();
         $data = $request->validate([
            'packagecode' => 'required',
            'packagedescription' => 'required',
-           'price' => 'required'
+           'price' => 'required',
+           'photo' => 'image|nullable|max:1999'
            
        ]);
-       Packages::create($data);
-       return redirect()->back()->with('success','Added successfuly');
+       
+       if($request->hasFile('photo')){
+            
+        $filenameWithExt = $request->file('photo')->getClientOriginalName();
+
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+        $extension = $request->file('photo')->getClientOriginalExtension();
+
+        $fileNameToStore = $filename.'_'.time().'.'.$extension;
+        
+        $path = $request->file('photo')->storeAs('public/uploads', $fileNameToStore);
+    }else{
+        $fileNameToStore = 'user_icon.png';
+    }
+
+    
+        $package = new Packages;
+        $package->packagecode = $request->input('packagecode');
+        $package->packagedescription = $request->input('packagedescription');
+        $package->price = $request->input('price');
+        $package->photo = $fileNameToStore;
+        $package->save();
+    
+
+
+         return redirect()->back()->with('success','Added successfuly');
     }
 
     /**

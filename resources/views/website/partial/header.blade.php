@@ -49,7 +49,35 @@
 							</nav>
               
 							<a data-toggle="modal" data-target="#myModal" id="bookmassagebtn" class="button_container header_button ml-auto"><div class="button text-center"><span>Book Massage</span></div></a>
+<<<<<<< HEAD
+							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+              <div class="form-group1">
+                    <div class="user-area dropdown float-right">
+                                <a id="navbarDropdown" class="nav-link dropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="margin-top: 20px;">
+                                   <img src="" class="admin"> Hello, {{ Auth::user()->name }}!<i class="fa fa-caret-dowsn" style="margin-left: 55px;"></i>
+                                </a>
+
+                        <div class="user-menu dropdown-menu">
+                                <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                               
+
+                                <a class="nav-link" href="{{ url('changepassword') }}"><i class="fa fa-cog"></i> Settings</a>
+
+                                    <a class="nav-link" href="{{ url('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                     <i class="fa fa-sign-out"></i> {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                        </div>
+                  
+                        </div>          
+=======
 							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>           
+>>>>>>> bc8b14b0bf9b5b509f01777b620d1ab39f9f4ec9
 </nav>
 </div>
 						</div>
