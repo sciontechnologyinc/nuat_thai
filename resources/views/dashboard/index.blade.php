@@ -138,20 +138,107 @@
           <div class="row">
             <div class="col-lg-7 grid-margin stretch-card">
               <!--weather card-->
-              <div class="card card-weather">
+              <!-- <div class="card card-weather">
                 <div class="card-body">
                   <div class="weather-date-location">
                     <h3><?php echo date("l");?> </h3>
                     <p class="text-gray">
                       <span class="weather-date"><?php echo date("Y/m/d");?></span>
                     </p>
+                  </div> -->
+
+
+        <!-- TABLE  -->
+
+    <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Packages</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                          #
+                          </th>
+                          <th>
+                          Full Name
+                          </th>
+                          <th>
+                          Contact #
+                          </th>
+                          <th>
+                          Date
+                          </th>
+                          <th>
+                          Status
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>
+                          1
+                          </td>
+                          <td>
+                          Admin
+                          </td>
+                          <td>
+                          091293199132
+                          </td>
+                          <td>
+                          Today
+                          </td>
+                          <td>
+                          Paid
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
-          </
+          </div>
 
-              
+
+               
+                </div>
+              </div>
+            </div>
+          
+
+ 
+ <?php
+ 
+ $dataPoints = array();
+ //Best practice is to create a separate file for handling connection to database
+ try{
+      // Creating a new connection.
+     // Replace your-hostname, your-db, your-username, your-password according to your database
+     $link = new \PDO(   'mysql:host=127.0.0.1;dbname=nuat_thai;charset=utf8mb4', //'mysql:host=localhost;dbname=canvasjs_db;charset=utf8mb4',
+                        'root', //'root',
+                        '', //'',
+                        array(
+                            \PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                            \PDO::ATTR_PERSISTENT => false
+                        )
+                    );
+     
+     $handle = $link->prepare('SELECT package, COUNT(*) as TOTAL FROM `bookmassages` GROUP BY package'); 
+     $handle->execute(); 
+     $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+         
+     foreach($result as $row){
+         array_push($dataPoints, array("label"=> $row->package, "y"=> $row->TOTAL));
+     }
+     $link = null;
+ }
+ catch(\PDOException $ex){
+     print($ex->getMessage());
+ }
+     
+ ?>             
  <script>
  window.onload = function () {
   
@@ -160,12 +247,11 @@
      exportEnabled: true,
      theme: "light1", // "light1", "light2", "dark1", "dark2"
      title:{
-         text: "Most Borrowed Books"
+         text: "Most Avail Package"
      },
      data: [{
          type: "column", //change type to bar, line, area, pie, etc  
-         x: 10,
-        y: 20
+         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
      }]
  });
  chart.render();

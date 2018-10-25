@@ -176,11 +176,7 @@ class BookmassageController extends Controller
      */
     public function update(Request $request)
     {
-        Nexmo::message()->send([
-            'to' => '639129935204',
-            'from' => 'Nuat Thai',
-            'text' => ' Reservation Complete'
-        ]);
+
         $bkms = Bookmassage::find($request->id);
         $date = date_format(date_create($request->resvdate),"Y-m-d");
         $time = date_format(date_create($request->resvtime),"H:i:s");
@@ -190,6 +186,13 @@ class BookmassageController extends Controller
         $bkms->package =  $request->package;
         $bkms->datetime = $date.' '.$time;
         $bkms->status = $request->status;
+        Nexmo::message()->send([
+            'to' => $request->contactno,
+            'from' => 'Nuat Thai',
+            'text' => 'Date: '.$date.' '.$time. '            '.
+                      'Package: ' .$request->package. '                                     '.
+                      '# of Reservation: ' .$request->noofreservation.'                                    '
+        ]);
         $bkms->save();
         return redirect('/bookmassages')->with('success','Updated successfuly');
     }
