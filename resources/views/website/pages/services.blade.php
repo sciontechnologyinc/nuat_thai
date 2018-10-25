@@ -82,7 +82,7 @@ article.card.servicesper {
             <h3>{{ $package->packagecode }} </h3>
         </header>
         <main class="card__description">
-           <div class="services-img"><img src="/images/slider5.jpg" alt=""></div>
+           <div class="services-img"><img src="{{asset('storage/uploads/'.$package->photo)}}" alt=""></div>
         </main>
     </div>
     </article>
