@@ -11,10 +11,17 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('home.index');
 });
 
+Route::get('paypalform', function () {
+    return view('paywithpaypal');
+});
+
+Route::post('paypal','PaymentController@payWithpaypal');
+Route::get('status','PaymentController@getPaymentStatus');
 
 Route::get('dashboard', function () {
     return view('dashboard.index');
@@ -25,7 +32,6 @@ Route::get('nt_admin', function () {
 });
 
 Route::resource('dashboard','DashboardController');
-
 
 Route::get('nuatthaihome', function () {
     return view('home.index');
