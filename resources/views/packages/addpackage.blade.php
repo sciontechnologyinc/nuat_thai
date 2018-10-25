@@ -29,6 +29,7 @@
         </ul>
     </div>
  @endif
+ <link rel="stylesheet" href="{!! ('/css/package.css') !!}">
 {!! Form::open(['id' => 'dataForm', 'url' => '/packages', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 <div class="content-wrapper">
 <div class="col-md-6 grid-margin stretch-card">
@@ -48,7 +49,7 @@
                     {!!Form::label('price', 'Price', array('class' => 'form-control-label'))!!}
                     {!!Form::text('price',null, ['placeholder' => '', 'class' => 'form-control col-lg-12', 'required' => '' ])!!}
                     </div>
-                    <div class="form-group">
+                    <div class="form-group photo">
                           {!!Form::label('photo', 'Photo', array('class' => 'form-control-label'))!!}
                               <div class="row">
                                 <input id="photo" name="photo" class="photo" type="file" accept="image/x-png,image/gif,image/jpeg">
@@ -58,8 +59,10 @@
                                 <p class="image_view"></p><img src="">
                               </div>
                         </div>
+                        <div>
                         {!!Form::submit('Submit', ['id' => 'addForm','class' => 'btn btn-success mr-2']) !!}
                         <button class="btn btn-light">Cancel</button>
+                        </div>
                       </form>
                     </div>
                   </div>
@@ -79,6 +82,7 @@
     font-size: 18px;
     text-align: center;
 }
+
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
@@ -90,7 +94,7 @@ $(function () {
 			reader.onload = function(e){
 				$('.pre_img').hide();
 				$('.image_view').after('<img src="'+e.target.result+'" />');
-				$('.photos img').css('max-width','100%');
+				$('.photo img').css('max-width','100%');
 				$("#remove_photo").show(200);
 				$(".custom-file-upload").slideUp(0);
 			}
@@ -104,7 +108,7 @@ $(function () {
 
 	//remove logo img 
 	$("#remove_photo").click(function(){
-		$('.photos img').hide();
+		$('.photo img').hide();
 		$('.pre_img').show();
 		$('.photo').val('');
 		$("#remove_photo").slideUp(300);

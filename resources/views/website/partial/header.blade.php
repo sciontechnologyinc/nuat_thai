@@ -37,14 +37,13 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                </div>
+                        </div>
                     @else
                     <div class="user-menu dropdown-menu">
                         <a class="nav-link" href="{{ url('login') }}"><i class="fa fa-user"></i> Login</a>
                     @endif
-                   
-      
-            </div>   </li>
+                    </div>   
+                    </li>
 								</ul>
 							</nav>
               
@@ -129,6 +128,9 @@ a.nav-link.profilebtn {
 link.dropdown.profile:hover {
     color: #fef600 !important;
     transition: ease 500ms;
+}
+a.nav-link.dropdown.profile {
+    cursor: pointer;
 }
 </style>
 

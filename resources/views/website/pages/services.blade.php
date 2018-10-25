@@ -43,7 +43,7 @@ body {
     padding: .5rem;
 }
 .card__description {
-    padding: .5rem;
+    padding: 20px 0px;
     line-height: 1.6em;
 }
 main.card__description {
@@ -51,10 +51,20 @@ main.card__description {
 }
 header.card__title {
     text-align: center;
-    color: #080e74;
+    color:#383838;
 }
 article.card {
     cursor: pointer;
+}
+article.card.servicesper {
+    background: url(/images/welcome-cover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 70%;
+    margin: auto;
+}
+.overlay {
+    background: rgb(255, 255, 255, 0.7);
 }
 </style>
 
@@ -64,17 +74,17 @@ article.card {
     <div class="services-title">Services/Packages</div>
     </div>
 </div>   
-
 <section class="card-container" >
     @foreach($packages as $package)
-    <article class="card" data-toggle="modal" data-target="#{{$package->id }}">
+    <article class="card servicesper" data-toggle="modal" data-target="#{{$package->id }}">
+    <div class="overlay">
         <header class="card__title">
             <h3>{{ $package->packagecode }} </h3>
         </header>
         <main class="card__description">
-           <div class="services-img"><img src="/images/slider5.jpg" alt=""></div>
+           <div class="services-img"><img src="{{asset('storage/uploads/'.$package->photo)}}" alt=""></div>
         </main>
-      
+    </div>
     </article>
     @endforeach
 
@@ -95,7 +105,6 @@ article.card {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
