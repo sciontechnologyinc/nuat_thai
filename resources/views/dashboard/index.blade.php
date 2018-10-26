@@ -207,6 +207,8 @@
  <?php
  
  $dataPoints = array();
+ $dataPoints1 = array();
+
  //Best practice is to create a separate file for handling connection to database
  try{
       // Creating a new connection.
@@ -221,12 +223,20 @@
                     );
      
      $handle = $link->prepare('SELECT package, COUNT(*) as TOTAL FROM `bookmassages` GROUP BY package'); 
+     $handle1 = $link->prepare('SELECT status, COUNT(*) as TOTAL FROM `bookmassages` GROUP BY status'); 
      $handle->execute(); 
      $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+
+     $handle1->execute(); 
+     $result1 = $handle1->fetchAll(\PDO::FETCH_OBJ);
          
      foreach($result as $row){
          array_push($dataPoints, array("label"=> $row->package, "y"=> $row->TOTAL));
      }
+
+     foreach($result1 as $row1){
+      array_push($dataPoints1, array("label"=> $row1->status, "y"=> $row1->TOTAL));
+  }
      $link = null;
  }
  catch(\PDOException $ex){
@@ -250,7 +260,23 @@
          dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
      }]
  });
- chart.render();
+
+var chart1 = new CanvasJS.Chart("chartContainer1", {
+  animationEnabled: true,
+     exportEnabled: true,
+     theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "Per Status Report"
+	},
+	data: [{
+		type: "pie",
+    dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+
+chart1.render();
+
+chart.render();
   
  }
  </script>
@@ -258,6 +284,11 @@
  <div class="col-sm-12 col-lg-12">
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
  </div>
+ 
+ <div class="col-sm-12 col-lg-12">
+        <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+ </div>
+
  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 
