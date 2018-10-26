@@ -21,6 +21,7 @@
     <?php Session::forget('error');?>
     @endif
     <div class="table-responsive">
+
         <table class="table table-striped">
           <thead>
             <tr>
@@ -42,12 +43,12 @@
               <td>{{ $package->noofreservation }}</td>
               <td>{{ $package->datetime }}</td>
               <td>{{ $package->status }}</td>
-              <td><img src="{!! asset('images/paypal.svg') !!}" class="paypal" height="1%" stlye="margin-bottom:30px" id="{{ $package->id }}" value="{{ $package->price }}" ></td>
+            <td><img src="{!! asset('images/paypal.svg') !!}" class="paypal" height="1%" stlye="margin-bottom:30px" id="{{ $package->id }}" value="{{ $package->price }}" ></img></td>
             </tr>
             @endforeach
           </tbody>
         </table>
-
+          <button type="submit" name="your_name" value="your_value" class="btn-link">Go</button>
           <div id="paypalmodal" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">

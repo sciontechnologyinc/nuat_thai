@@ -162,11 +162,9 @@ class BookmassageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updateStatus($id)
+    public function updateStatus($id,$amount,$date)
     {
-        $bookmassages = Bookmassage::orderBy('id')->get();
-        $bookmassages = Bookmassage::where('id', $id)->update(request()->all());
-        return view('bookmassages.index', ['bookmassages' => $bookmassages, 'packages' => $packages]);
+        
     }
 
     /**

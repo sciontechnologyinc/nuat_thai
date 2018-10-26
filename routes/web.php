@@ -16,8 +16,7 @@ Route::get('/', function () {
     return view('home.index');
 });
 
-Route::post('bookmassage/update/{id}','BookmassageController@updateStatus');
-
+Route::post('bookmassage/{id}/{amount}/{date}','BookmassageController@updateStatus');
 
 Route::get('paypalform', function () {
     return view('paywithpaypal');
@@ -25,8 +24,6 @@ Route::get('paypalform', function () {
 
 Route::post('paypal','PaymentController@payWithpaypal');
 Route::get('status','PaymentController@getPaymentStatus');
-
-
 
 Route::get('nt_admin', function () {
     return view('auth.adminlogin');

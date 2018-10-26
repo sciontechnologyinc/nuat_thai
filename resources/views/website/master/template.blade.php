@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Nuat Thai</title>
     <link rel="stylesheet" type="text/css" href="{!! asset('website/styles/bootstrap-4.1.2/bootstrap.min.css') !!}">
     <link href="{!! asset('website/plugins/font-awesome-4.7.0/css/font-awesome.min.css') !!}" rel="stylesheet" type="text/css">
@@ -47,6 +48,12 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
         $(document).ready( function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            
             $('#table_id').DataTable();
             $('.paypal').click(function(){
                $('#amount').val($(this).attr('value'));
@@ -68,11 +75,9 @@
                             
                     }
                 })
-
-            //    setTimeout(() => {
-            //        $( "#paypalbtn" ).trigger( "click" );
-            //    }, 1000);
-
+               setTimeout(() => {
+                   $( "#paypalbtn" ).trigger( "click" );
+               }, 1000);
             })
         });
 
