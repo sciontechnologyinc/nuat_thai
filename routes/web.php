@@ -26,9 +26,7 @@ Route::get('paypalform', function () {
 Route::post('paypal','PaymentController@payWithpaypal');
 Route::get('status','PaymentController@getPaymentStatus');
 
-Route::get('dashboard', function () {
-    return view('dashboard.index');
-});
+
 
 Route::get('nt_admin', function () {
     return view('auth.adminlogin');

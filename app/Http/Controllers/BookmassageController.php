@@ -189,7 +189,7 @@ class BookmassageController extends Controller
         $bkms->datetime = $date.' '.$time;
         $bkms->status = $request->status;
         Nexmo::message()->send([
-            'to' => $request->contactno,
+            'to'   => $request->contactno,
             'from' => 'Nuat Thai',
             'text' => 'Date: '.$date.' '.$time. '            '.
                       'Package: ' .$request->package. '                                     '.
