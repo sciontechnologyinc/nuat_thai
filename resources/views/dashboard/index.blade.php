@@ -196,12 +196,44 @@
                       </tbody>
                     </table>
                   </div>
+<<<<<<< HEAD
                 </div>
               </div>
             </div>
 
                
+=======
+>>>>>>> 7b84dbc391feeb6f6b63f1cfff5efd658ab5fbc6
                 </div>
               </div>
+            </div>
+          </
+
+              
+ <script>
+ window.onload = function () {
+  
+ var chart = new CanvasJS.Chart("chartContainer", {
+     animationEnabled: true,
+     exportEnabled: true,
+     theme: "light1", // "light1", "light2", "dark1", "dark2"
+     title:{
+         text: "Most Borrowed Books"
+     },
+     data: [{
+         type: "column", //change type to bar, line, area, pie, etc  
+         x: 10,
+        y: 20
+     }]
+ });
+ chart.render();
+  
+ }
+ </script>
+
+ <div class="col-sm-12 col-lg-12">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+ </div>
+ <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 @endsection
 

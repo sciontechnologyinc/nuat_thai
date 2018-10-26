@@ -60,11 +60,11 @@ article.card.servicesper {
     background: url(/images/welcome-cover.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 75%;
+    width: 70%;
     margin: auto;
 }
 .overlay {
-    background: rgb(255, 255, 255, 0.85);
+    background: rgb(255, 255, 255, 0.7);
 }
 </style>
 

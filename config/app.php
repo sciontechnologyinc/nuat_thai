@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Name
+| Application Name
     |--------------------------------------------------------------------------
     |
     | This value is the name of your application. This value is used when the
@@ -211,7 +211,5 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Calendar' => MaddHatter\LaravelFullcalendar\Facades\Calendar::class,
         'Nexmo' => \Nexmo\Laravel\Facade\Nexmo::class,
-
     ],
-
 ];
