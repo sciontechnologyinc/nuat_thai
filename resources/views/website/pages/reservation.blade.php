@@ -43,7 +43,7 @@
               <td>{{ $package->noofreservation }}</td>
               <td>{{ $package->datetime }}</td>
               <td>{{ $package->status }}</td>
-            <td><img src="{!! asset('images/paypal.svg') !!}" class="paypal" height="1%" stlye="margin-bottom:30px" id="{{ $package->id }}" value="{{ $package->price }}" ></img></td>
+            <td><img src="{!! asset('images/paypal.svg') !!}" class="paypal" height="1%" stlye="margin-bottom:30px" id="{{ $package->id }}" value="{{ $package->price }}"> </img></td>
             </tr>
             @endforeach
           </tbody>
