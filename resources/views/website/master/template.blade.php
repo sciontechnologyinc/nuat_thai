@@ -60,24 +60,9 @@
                var fullDate = new Date();
                var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) :(fullDate.getMonth()+1);
                var currentDate = fullDate.getDate() + "/" + twoDigitMonth + "/" + fullDate.getFullYear();
-               $.ajax({
-                    headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    url:'bookmassage/update/'+this.id,
-                    method:'POST',
-                    data:{
-                        amount:$(this).attr('value'),
-                        status:'paid',
-                        datepay:currentDate,
-                    },
-                    success: function(data){
-                            
-                    }
-                })
-               setTimeout(() => {
-                   $( "#paypalbtn" ).trigger( "click" );
-               }, 1000);
+                  setTimeout(() => {
+                        $( "#paypalbtn" ).trigger( "click" );
+                  }, 500);
             })
         });
 
