@@ -16,6 +16,7 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Rest\ApiContext;
+use Bookmassage;
 use Redirect;
 use Session;
 use URL;
@@ -23,6 +24,13 @@ use URL;
 class PaymentController extends Controller
 {
     private $_api_context;
+
+    public function getPayment($id)
+    {
+        $bookmassage = Bookmassage::where("id", $id)->select('fullname','contactno','noofreservation','package')->get();
+        return response()->json(['fetchers' => $fetcher]);
+    }
+
     public function __construct()
     {
  

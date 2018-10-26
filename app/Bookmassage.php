@@ -11,6 +11,9 @@ class Bookmassage extends Model
         'fullname',
         'contactno',
         'noofreservation',
+        'status',
+        'amount',
+        'datepay',
         'datetime',
         'package'
 	];
