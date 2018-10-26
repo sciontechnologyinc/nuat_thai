@@ -196,18 +196,15 @@
                       </tbody>
                     </table>
                   </div>
-<<<<<<< HEAD
                 </div>
               </div>
             </div>
 
                
-=======
->>>>>>> 7b84dbc391feeb6f6b63f1cfff5efd658ab5fbc6
                 </div>
               </div>
             </div>
-          </
+          
 
               
  <script>
