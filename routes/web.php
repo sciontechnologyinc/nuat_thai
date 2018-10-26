@@ -16,6 +16,9 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+Route::post('bookmassage/update/{id}','BookmassageController@updateStatus');
+
+
 Route::get('paypalform', function () {
     return view('paywithpaypal');
 });
@@ -38,8 +41,6 @@ Route::get('nuatthaihome', function () {
 Route::get('nuatthaivirtualtour', function () {
     return view('website.pages.virtualtour');
 });
-
-
 
 Route::resource('bookmassagesave','BookmassageController');
 Route::get('bookmassage', function () {

@@ -162,9 +162,11 @@ class BookmassageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function updateStatus($id)
     {
-        //
+        $bookmassages = Bookmassage::orderBy('id')->get();
+        $bookmassages = Bookmassage::where('id', $id)->update(request()->all());
+        return view('bookmassages.index', ['bookmassages' => $bookmassages, 'packages' => $packages]);
     }
 
     /**
@@ -187,7 +189,7 @@ class BookmassageController extends Controller
         $bkms->datetime = $date.' '.$time;
         $bkms->status = $request->status;
         Nexmo::message()->send([
-            'to' => $request->contactno,
+            'to'   => $request->contactno,
             'from' => 'Nuat Thai',
             'text' => 'Date: '.$date.' '.$time. '            '.
                       'Package: ' .$request->package. '                                     '.
