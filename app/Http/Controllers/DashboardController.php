@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Branches;
+use App\Bookmassage;
 use App\User;
 use Carbon\Carbon;
 use DB;
@@ -24,15 +24,8 @@ class DashboardController extends Controller
      */
     public function index(){
         
-        $t_branches = Branches::all()->count();
-        $t_users = User::all()->count();
-
-
-        return view('dashboard.index')
-            ->with([
-                't_branches'                =>  $t_branches,
-  
-            ]);
+        $reports = Bookmassage::orderBy('id')->get();
+        return view('dashboard.index', ['reports' => $reports]);
     }
 
     /**

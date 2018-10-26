@@ -135,25 +135,11 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-7 grid-margin stretch-card">
-              <!--weather card-->
-              <!-- <div class="card card-weather">
-                <div class="card-body">
-                  <div class="weather-date-location">
-                    <h3><?php echo date("l");?> </h3>
-                    <p class="text-gray">
-                      <span class="weather-date"><?php echo date("Y/m/d");?></span>
-                    </p>
-                  </div> -->
-
-
-        <!-- TABLE  -->
-
-    <div class="col-lg-12 grid-margin stretch-card">
+  
+          <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Packages</h4>
+                  <h4 class="card-title">Reports</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
@@ -194,18 +180,27 @@
                           </td>
                         </tr>
                       </tbody>
+                      @foreach($reports as $index => $report)
+                      <tr>
+                      @if($report->status == 'Paid')
+                          <td>
+                          {{$index +1}}
+                          </td>
+                          <td>{{$report->fullname}}</td>
+                          <td>{{$report->contactno}}</td>
+                          <td>{{$report->datetime}}</td>
+                          <td>{{$report->status}}</td>
+                        @endif
+                        </tr>
+                      </tbody>
+                      @endforeach
                     </table>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-
-
-               
-                </div>
-              </div>
-            </div>
+    
+          
           
 
  
@@ -239,7 +234,8 @@
  }
      
  ?>             
- <script>
+
+<script>
  window.onload = function () {
   
  var chart = new CanvasJS.Chart("chartContainer", {
@@ -263,5 +259,8 @@
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
  </div>
  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+                    
 @endsection
 
