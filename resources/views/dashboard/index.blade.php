@@ -135,12 +135,8 @@
               </div>
             </div>
           </div>
-
-
-
-        <!-- TABLE  -->
-
-    <div class="col-lg-12 grid-margin stretch-card">
+  
+          <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Reports</h4>
@@ -166,6 +162,24 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <tr>
+                          <td>
+                          1
+                          </td>
+                          <td>
+                          Admin
+                          </td>
+                          <td>
+                          091293199132
+                          </td>
+                          <td>
+                          Today
+                          </td>
+                          <td>
+                          Paid
+                          </td>
+                        </tr>
+                      </tbody>
                       @foreach($reports as $index => $report)
                       <tr>
                       @if($report->status == 'Paid')
@@ -185,6 +199,41 @@
                 </div>
               </div>
             </div>
+    
+          
+          
+
+ 
+ <?php
+ 
+ $dataPoints = array();
+ //Best practice is to create a separate file for handling connection to database
+ try{
+      // Creating a new connection.
+     // Replace your-hostname, your-db, your-username, your-password according to your database
+     $link = new \PDO(   'mysql:host=127.0.0.1;dbname=nuat_thai;charset=utf8mb4', //'mysql:host=localhost;dbname=canvasjs_db;charset=utf8mb4',
+                        'root', //'root',
+                        '', //'',
+                        array(
+                            \PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                            \PDO::ATTR_PERSISTENT => false
+                        )
+                    );
+     
+     $handle = $link->prepare('SELECT package, COUNT(*) as TOTAL FROM `bookmassages` GROUP BY package'); 
+     $handle->execute(); 
+     $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+         
+     foreach($result as $row){
+         array_push($dataPoints, array("label"=> $row->package, "y"=> $row->TOTAL));
+     }
+     $link = null;
+ }
+ catch(\PDOException $ex){
+     print($ex->getMessage());
+ }
+     
+ ?>             
 
 <script>
  window.onload = function () {
@@ -194,12 +243,11 @@
      exportEnabled: true,
      theme: "light1", // "light1", "light2", "dark1", "dark2"
      title:{
-         text: "Most Borrowed Books"
+         text: "Most Avail Package"
      },
      data: [{
          type: "column", //change type to bar, line, area, pie, etc  
-         x: 10,
-        y: 20
+         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
      }]
  });
  chart.render();
@@ -212,12 +260,7 @@
  </div>
  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-               
-                </div>
-              </div>
-            </div>
+
                     
-
 @endsection
-
 
