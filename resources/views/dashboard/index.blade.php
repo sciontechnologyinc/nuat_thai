@@ -162,24 +162,6 @@
                         </tr>
                       </thead>
                       <tbody>
-                      <tr>
-                          <td>
-                          1
-                          </td>
-                          <td>
-                          Admin
-                          </td>
-                          <td>
-                          091293199132
-                          </td>
-                          <td>
-                          Today
-                          </td>
-                          <td>
-                          Paid
-                          </td>
-                        </tr>
-                      </tbody>
                       @foreach($reports as $index => $report)
                       <tr>
                       @if($report->status == 'Paid')
