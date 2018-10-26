@@ -186,7 +186,7 @@
               </div>
             </div>
 
-             <script>
+<script>
  window.onload = function () {
   
  var chart = new CanvasJS.Chart("chartContainer", {
