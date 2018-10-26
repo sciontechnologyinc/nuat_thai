@@ -138,14 +138,68 @@
           <div class="row">
             <div class="col-lg-7 grid-margin stretch-card">
               <!--weather card-->
-              <div class="card card-weather">
+              <!-- <div class="card card-weather">
                 <div class="card-body">
                   <div class="weather-date-location">
                     <h3><?php echo date("l");?> </h3>
                     <p class="text-gray">
                       <span class="weather-date"><?php echo date("Y/m/d");?></span>
                     </p>
+                  </div> -->
+
+
+        <!-- TABLE  -->
+
+    <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Packages</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                          #
+                          </th>
+                          <th>
+                          Full Name
+                          </th>
+                          <th>
+                          Contact #
+                          </th>
+                          <th>
+                          Date
+                          </th>
+                          <th>
+                          Status
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>
+                          1
+                          </td>
+                          <td>
+                          Admin
+                          </td>
+                          <td>
+                          091293199132
+                          </td>
+                          <td>
+                          Today
+                          </td>
+                          <td>
+                          Paid
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
+                </div>
+              </div>
+            </div>
+
                
                 </div>
               </div>

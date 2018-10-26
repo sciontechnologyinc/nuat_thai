@@ -12,8 +12,8 @@ return [
     |
     */
 
-    'api_key'    => '5ef6898c',
-    'api_secret' => 'Hy2i9xkWkIiknL7x',
+    'api_key'    => '478e4567',
+    'api_secret' => 'bUvHL0EZXfCiYIPf',
 
     /*
     |--------------------------------------------------------------------------
