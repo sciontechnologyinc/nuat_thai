@@ -66,6 +66,9 @@ article.card.servicesper {
 .overlay {
     background: rgb(255, 255, 255, 0.7);
 }
+.container.services {
+    border-top: 1px solid #d6d6d6;
+}
 </style>
 
 <header class= "aboutheader">
