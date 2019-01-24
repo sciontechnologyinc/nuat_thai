@@ -50,9 +50,9 @@ class PackageController extends Controller
             "allDaySlot" => false,
             "selectable" => true,
             "height"=> "auto",
-            "minTime" =>  "10:00:00",
+            "minTime" =>  "00:00:00",
             "hiddenDays"=> [ 6, 0 ],
-            "maxTime" => "18:00:00",
+            "maxTime" => "24:00:00",
             "header"=> [
                 "left"=> 'prev,next',
                 "center"=> 'title',

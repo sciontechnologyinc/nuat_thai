@@ -49,9 +49,9 @@ class BookmassageController extends Controller
             "nowIndicator" => true,
             "selectable" => true,
             "height"=> "auto",
-            "minTime" =>  "10:00:00",
+            "minTime" =>  "00:00:00",
             "hiddenDays"=> [ 6, 0 ],
-            "maxTime" => "18:00:00",
+            "maxTime" => "24:00:00",
             "header"=> [
                 "left"=> 'prev,next',
                 "center"=> 'title',
@@ -59,8 +59,8 @@ class BookmassageController extends Controller
             ],
             "businessHours" => [
                 "dow" => [ 1, 2, 3, 4, 5],
-                "start" => '10:00',
-                "end" => '18:00',
+                "start" => '00:00',
+                "end" => '24:00',
             ]
         ])
         ->setCallbacks([ //set fullcalendar callback options (will not be JSON encoded)
