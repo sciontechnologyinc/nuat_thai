@@ -10,7 +10,7 @@
               <th>No. of Reservation</th>
               <th>Date</th>
               <th>Status</th>
-              <th>PayMaya</th>
+              <th>Paypal</th>
             </tr>
           </thead>
           <tbody>
@@ -19,7 +19,7 @@
               <td>{{ $package->noofreservation }}</td>
               <td>{{ $package->datetime }}</td>
               <td>{{ $package->status }}</td>
-              <td><img src="{!! asset('images/PayMaya-logo.png') !!}" height="12%" stlye="margin-bottom:30px"></td>
+              <td><img src="{!! asset('images/paypal.svg') !!}" height="1%" stlye="margin-bottom:30px"></td>
             </tr>
             @endforeach
           </tbody>
