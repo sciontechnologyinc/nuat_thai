@@ -49,7 +49,7 @@ class BookmassageController extends Controller
             "nowIndicator" => true,
             "selectable" => true,
             "height"=> "auto",
-            "minTime" =>  "00:00:00",
+            "minTime" =>  "12:00:00",
             "hiddenDays"=> [ 6, 0 ],
             "maxTime" => "24:00:00",
             "header"=> [
@@ -59,7 +59,7 @@ class BookmassageController extends Controller
             ],
             "businessHours" => [
                 "dow" => [ 1, 2, 3, 4, 5],
-                "start" => '00:00',
+                "start" => '12:00',
                 "end" => '24:00',
             ]
         ])
@@ -186,8 +186,9 @@ class BookmassageController extends Controller
         $bkms->package =  $request->package;
         $bkms->datetime = $date.' '.$time;
         $bkms->status = $request->status;
+        
         Nexmo::message()->send([
-            'to'   => $request->contactno,
+            'to'   => '639495632168',
             'from' => 'Nuat Thai',
             'text' => 'Date: '.$date.' '.$time. '            '.
                       'Package: ' .$request->package. '                                     '.

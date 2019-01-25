@@ -12,9 +12,8 @@ return [
     |
     */
 
-    'api_key'    => '478e4567',
-    'api_secret' => 'bUvHL0EZXfCiYIPf',
-
+    'api_key'    => '5da1c915',
+    'api_secret' => 'c3mScvI0ve9p7ZK7',
     /*
     |--------------------------------------------------------------------------
     | Signature Secret
